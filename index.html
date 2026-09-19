@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Agni Expert — Στρατηγική marketing, campaigns, SEO, content και performance που μετατρέπουν την παρουσία μιας επιχείρησης σε ουσιαστική ανάπτυξη."
+    content="Agni Expert — Marketing strategy, campaigns, SEO, content και performance."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,14 @@
   >
 
   <style>
+
     :root {
-      --black: #0a0a0c;
-      --black-soft: #111116;
+      --black: #08080a;
+      --black-soft: #101014;
       --black-card: #15151b;
 
       --white: #f7f6f8;
-      --muted: #a5a3ad;
+      --muted: #a4a2ac;
 
       --purple: #8b5cf6;
       --purple-dark: #6d28d9;
@@ -92,7 +93,7 @@
       font-family: "Manrope", sans-serif;
       font-size: 21px;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
     }
 
     .logo span {
@@ -104,7 +105,7 @@
       align-items: center;
       gap: 34px;
       font-size: 14px;
-      color: #d2d0d7;
+      color: #d1cfd6;
     }
 
     .nav-links a {
@@ -116,8 +117,8 @@
     }
 
     .nav-button {
-      padding: 11px 18px;
       border: 1px solid var(--border);
+      padding: 11px 19px;
       border-radius: 100px;
       font-size: 14px;
       transition: all 0.25s ease;
@@ -143,17 +144,17 @@
       background:
         radial-gradient(
           circle at 78% 48%,
-          rgba(124,58,237,0.09),
+          rgba(124,58,237,0.10),
           transparent 30%
         ),
         var(--black);
     }
 
     .hero-content {
-      width: 58%;
+      width: 62%;
       position: relative;
       z-index: 5;
-      padding-top: 60px;
+      padding-top: 50px;
     }
 
     .eyebrow {
@@ -164,6 +165,7 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.14em;
+
       color: var(--lilac);
       margin-bottom: 24px;
     }
@@ -239,7 +241,7 @@
 
 
     /* =========================
-       ABSTRACT HERO VISUAL
+       ABSTRACT VISUAL
     ========================= */
 
     .hero-visual {
@@ -288,9 +290,11 @@
       stroke: url(#purpleGradient);
       stroke-width: 5;
       opacity: 0.95;
-      filter: drop-shadow(
-        0 0 12px rgba(139,92,246,0.35)
-      );
+
+      filter:
+        drop-shadow(
+          0 0 12px rgba(139,92,246,0.35)
+        );
     }
 
     .flow-secondary {
@@ -340,6 +344,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
+
       background: var(--border);
       border: 1px solid var(--border);
     }
@@ -381,8 +386,8 @@
     .services-header {
       display: flex;
       justify-content: space-between;
-      gap: 40px;
       align-items: flex-end;
+      gap: 40px;
       margin-bottom: 65px;
     }
 
@@ -504,6 +509,7 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
+
       border: 1px solid var(--border);
       background: #0d0d11;
       color: var(--white);
@@ -512,8 +518,10 @@
       border-radius: 8px;
 
       outline: none;
-      transition: border-color 0.25s ease,
-                  box-shadow 0.25s ease;
+
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .form-group input {
@@ -521,14 +529,16 @@
     }
 
     .form-group textarea {
-      min-height: 145px;
+      min-height: 150px;
       resize: vertical;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: rgba(139,92,246,0.75);
-      box-shadow: 0 0 0 3px rgba(139,92,246,0.08);
+
+      box-shadow:
+        0 0 0 3px rgba(139,92,246,0.08);
     }
 
     .form-group input::placeholder,
@@ -557,6 +567,7 @@
 
     .cta::before {
       content: "";
+
       position: absolute;
 
       width: 500px;
@@ -573,9 +584,11 @@
     .cta-inner {
       position: relative;
       z-index: 2;
+
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+
       gap: 40px;
     }
 
@@ -607,6 +620,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+
       color: #77757e;
       font-size: 12px;
     }
@@ -664,7 +678,7 @@
     @media (max-width: 600px) {
 
       .container {
-        width: min(100% - 32px, 1180px);
+        width: calc(100% - 32px);
       }
 
       header {
@@ -736,6 +750,7 @@
         align-items: flex-start;
       }
     }
+
   </style>
 </head>
 
@@ -748,6 +763,7 @@
   ========================= -->
 
   <header>
+
     <div class="container nav">
 
       <a href="#" class="logo">
@@ -755,9 +771,19 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#about">Ποιοι είμαστε</a>
-        <a href="#services">Υπηρεσίες</a>
-        <a href="#contact">Επικοινωνία</a>
+
+        <a href="#about">
+          Ποιοι είμαστε
+        </a>
+
+        <a href="#services">
+          Υπηρεσίες
+        </a>
+
+        <a href="#contact">
+          Επικοινωνία
+        </a>
+
       </nav>
 
       <a href="#contact" class="nav-button">
@@ -765,6 +791,7 @@
       </a>
 
     </div>
+
   </header>
 
 
@@ -811,7 +838,7 @@
         </div>
 
 
-        <!-- Abstract visual -->
+        <!-- ABSTRACT VISUAL -->
 
         <div class="hero-visual" aria-hidden="true">
 
@@ -923,6 +950,7 @@
 
         <div class="process-grid">
 
+
           <div class="process-item">
 
             <div class="process-number">
@@ -993,6 +1021,7 @@
             </p>
 
           </div>
+
 
         </div>
 
@@ -1137,6 +1166,8 @@
         <div class="contact-grid">
 
 
+          <!-- LEFT SIDE -->
+
           <div>
 
             <div class="section-label">
@@ -1157,18 +1188,30 @@
 
             <div class="contact-info">
 
-              <!-- Βάλε εδώ τα πραγματικά στοιχεία επικοινωνίας -->
-              <span>hello@yourdomain.gr</span>
-              <span>+30 69X XXX XXXX</span>
+              <span>
+                hello@yourdomain.gr
+              </span>
+
+              <span>
+                +30 69X XXX XXXX
+              </span>
 
             </div>
 
           </div>
 
 
-          <form class="contact-form" action="#" method="POST">
+          <!-- FORM -->
+
+          <form
+            class="contact-form"
+            action="#"
+            method="POST"
+          >
+
 
             <div class="form-row">
+
 
               <div class="form-group">
 
@@ -1203,6 +1246,7 @@
 
               </div>
 
+
             </div>
 
 
@@ -1225,13 +1269,13 @@
             <div class="form-group">
 
               <label for="message">
-                Πες μας περισσότερα
+                Μήνυμα
               </label>
 
               <textarea
                 id="message"
                 name="message"
-                placeholder="Τι θα ήθελες να πετύχεις;"
+                placeholder="Πες μας λίγα πράγματα για το project σου..."
                 required
               ></textarea>
 
@@ -1244,6 +1288,7 @@
             >
               Στείλε μήνυμα
             </button>
+
 
           </form>
 
@@ -1269,7 +1314,10 @@
             <span>brand σου να ξεχωρίσει;</span>
           </h2>
 
-          <a href="#contact" class="btn btn-primary">
+          <a
+            href="#contact"
+            class="btn btn-primary"
+          >
             Μίλησέ μας
           </a>
 
@@ -1278,6 +1326,7 @@
       </div>
 
     </section>
+
 
   </main>
 
