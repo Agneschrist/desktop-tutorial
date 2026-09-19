@@ -1,852 +1,825 @@
-```html
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Agni Expert | Marketing & Strategy</title>
-
-    <meta
-        name="description"
-        content="Agni Expert — Marketing strategy, campaigns, SEO και content για επιχειρήσεις που θέλουν να ξεχωρίσουν."
-    >
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-        :root {
-            --black: #0b0b0b;
-            --black-soft: #111111;
-            --white: #f5f3ee;
-            --white-pure: #ffffff;
-            --orange: #ff5a1f;
-            --gray: #a6a39d;
-            --border: rgba(245, 243, 238, 0.14);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--black);
-            color: var(--white);
-            font-family: "DM Sans", sans-serif;
-            line-height: 1.5;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font: inherit;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-        }
-
-        .nav {
-            max-width: 1400px;
-            margin: auto;
-            padding: 28px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-family: "Manrope", sans-serif;
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: -0.04em;
-        }
-
-        .logo span {
-            color: var(--orange);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 38px;
-            align-items: center;
-            list-style: none;
-            font-size: 14px;
-        }
-
-        .nav-links a {
-            color: #d6d3cc;
-            transition: color 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--white);
-        }
-
-        .nav-cta {
-            border: 1px solid rgba(245, 243, 238, 0.4);
-            padding: 11px 20px;
-            border-radius: 100px;
-            transition: all 0.25s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--white);
-            color: var(--black);
-            border-color: var(--white);
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 150px 5% 90px;
-        }
-
-        .hero-inner {
-            width: 100%;
-            max-width: 1400px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            color: var(--orange);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 {
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(48px, 6vw, 86px);
-            line-height: 0.98;
-            letter-spacing: -0.065em;
-            max-width: 850px;
-        }
-
-        .hero h1 span {
-            color: var(--orange);
-        }
-
-        .hero-description {
-            margin-top: 32px;
-            max-width: 600px;
-            color: var(--gray);
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            margin-top: 38px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 14px 24px;
-            border-radius: 100px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.25s ease;
-            display: inline-block;
-        }
-
-        .button-primary {
-            background: var(--orange);
-            color: white;
-        }
-
-        .button-primary:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        .button-secondary {
-            border: 1px solid var(--border);
-            color: var(--white);
-        }
-
-        .button-secondary:hover {
-            border-color: rgba(245, 243, 238, 0.5);
-        }
-
-        /* =========================
-           ABSTRACT VISUAL
-        ========================= */
-
-        .hero-visual {
-            height: 580px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .orb {
-            width: 360px;
-            height: 480px;
-            background:
-                radial-gradient(
-                    circle at 40% 35%,
-                    #ff9c63 0%,
-                    #ff5a1f 28%,
-                    #c92d00 55%,
-                    transparent 70%
-                );
-            filter: blur(2px);
-            border-radius: 48% 52% 44% 56%;
-            transform: rotate(-18deg);
-            opacity: 0.95;
-            box-shadow:
-                0 0 120px rgba(255, 90, 31, 0.25);
-        }
-
-        .orb::before {
-            content: "";
-            position: absolute;
-            inset: 45px;
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: inherit;
-        }
-
-        .grid-lines {
-            position: absolute;
-            width: 520px;
-            height: 520px;
-            border: 1px solid rgba(245,243,238,0.08);
-            border-radius: 50%;
-        }
-
-        .grid-lines::before,
-        .grid-lines::after {
-            content: "";
-            position: absolute;
-            inset: 60px;
-            border: 1px solid rgba(245,243,238,0.06);
-            border-radius: 50%;
-        }
-
-        .grid-lines::after {
-            inset: 120px;
-        }
-
-        /* =========================
-           PROCESS
-        ========================= */
-
-        .process {
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .process-inner {
-            max-width: 1400px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .process-item {
-            padding: 32px 30px;
-            border-right: 1px solid var(--border);
-        }
-
-        .process-item:last-child {
-            border-right: none;
-        }
-
-        .process-number {
-            color: var(--orange);
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .process-item h3 {
-            font-family: "Manrope", sans-serif;
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .process-item p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            padding: 130px 5%;
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .services-inner {
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        .section-label {
-            color: var(--orange);
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.16em;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .services h2 {
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(38px, 5vw, 65px);
-            line-height: 1;
-            letter-spacing: -0.055em;
-            max-width: 850px;
-            margin-bottom: 70px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid #d8d5ce;
-            border-left: 1px solid #d8d5ce;
-        }
-
-        .service-card {
-            min-height: 300px;
-            padding: 35px;
-            border-right: 1px solid #d8d5ce;
-            border-bottom: 1px solid #d8d5ce;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .service-number {
-            color: var(--orange);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .service-card h3 {
-            font-family: "Manrope", sans-serif;
-            font-size: 26px;
-            margin-top: 75px;
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #77746e;
-            max-width: 320px;
-        }
-
-        .service-card:hover p {
-            color: #aaa7a0;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            padding: 130px 5%;
-            background: var(--black);
-        }
-
-        .cta-inner {
-            max-width: 1400px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(45px, 7vw, 90px);
-            line-height: 0.95;
-            letter-spacing: -0.065em;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .cta h2 span {
-            color: var(--orange);
-        }
-
-        .cta p {
-            color: var(--gray);
-            max-width: 550px;
-            margin: 30px auto;
-            font-size: 17px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 30px 5%;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-inner {
-            max-width: 1400px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            color: var(--gray);
-            font-size: 13px;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding-top: 130px;
-            }
-
-            .hero-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visual {
-                height: 400px;
-                margin-top: 20px;
-            }
-
-            .orb {
-                width: 250px;
-                height: 350px;
-            }
-
-            .grid-lines {
-                width: 360px;
-                height: 360px;
-            }
-
-            .process-inner {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-item:nth-child(2) {
-                border-right: none;
-            }
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .nav {
-                padding: 22px 6%;
-            }
-
-            .nav-cta {
-                display: none;
-            }
-
-            .hero {
-                padding: 120px 6% 70px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-visual {
-                height: 330px;
-            }
-
-            .orb {
-                width: 210px;
-                height: 290px;
-            }
-
-            .grid-lines {
-                width: 300px;
-                height: 300px;
-            }
-
-            .process-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .process-item {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .process-item:last-child {
-                border-bottom: none;
-            }
-
-            .services {
-                padding: 90px 6%;
-            }
-
-            .service-card {
-                min-height: 250px;
-            }
-
-            .cta {
-                padding: 100px 6%;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agni Expert | Marketing & Strategy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0a0a0c;
+      --black-soft: #111116;
+      --white: #f7f6f8;
+      --muted: #a5a3ad;
+      --purple: #8b5cf6;
+      --purple-dark: #6d28d9;
+      --lilac: #c4b5fd;
+      --border: rgba(255,255,255,0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 28px 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .logo span {
+      color: var(--lilac);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 14px;
+      color: #d8d6dc;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--lilac);
+    }
+
+    .nav-cta {
+      padding: 12px 20px;
+      border: 1px solid rgba(196,181,253,0.35);
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: white;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 820px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 50%, rgba(124,58,237,0.10), transparent 30%),
+        var(--black);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(124,58,237,0.07);
+      filter: blur(100px);
+      right: -200px;
+      top: 120px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: 58%;
+      position: relative;
+      z-index: 5;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--lilac);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--purple);
+    }
+
+    h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -4px;
+      font-weight: 700;
+      max-width: 850px;
+      margin-bottom: 30px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #7c3aed;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: #dddbe1;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(196,181,253,0.5);
+      color: var(--lilac);
+    }
+
+    /* =========================
+       ABSTRACT RIBBON
+    ========================= */
+
+    .hero-visual {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 620px;
+      pointer-events: none;
+    }
+
+    .ribbon {
+      position: absolute;
+      width: 420px;
+      height: 760px;
+      right: 40px;
+      top: -70px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      transform: rotate(28deg);
+      background:
+        linear-gradient(var(--black), var(--black)) padding-box,
+        linear-gradient(
+          135deg,
+          transparent 8%,
+          var(--purple-dark) 35%,
+          var(--lilac) 55%,
+          var(--purple) 72%,
+          transparent 92%
+        ) border-box;
+      filter: drop-shadow(0 0 22px rgba(139,92,246,0.22));
+    }
+
+    .ribbon::before,
+    .ribbon::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(196,181,253,0.38);
+      border-radius: 50%;
+    }
+
+    .ribbon::before {
+      width: 370px;
+      height: 690px;
+      top: 35px;
+      left: 25px;
+      transform: rotate(-8deg);
+    }
+
+    .ribbon::after {
+      width: 470px;
+      height: 720px;
+      top: 15px;
+      left: -30px;
+      border-color: rgba(124,58,237,0.28);
+      transform: rotate(11deg);
+    }
+
+    .ribbon-glow {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: 95px;
+      top: 210px;
+      background: rgba(139,92,246,0.14);
+      filter: blur(70px);
+      border-radius: 50%;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process {
+      padding: 130px 0;
+      background: var(--black-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--lilac);
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(38px, 5vw, 62px);
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+      max-width: 750px;
+      margin-bottom: 70px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .process-item {
+      padding: 0 30px;
+      border-left: 1px solid var(--border);
+    }
+
+    .process-item:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .process-number {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .process-item h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 220px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      padding: 140px 0;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 70px;
+    }
+
+    .services-header p {
+      max-width: 400px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .service-card {
+      min-height: 250px;
+      padding: 35px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: rgba(139,92,246,0.06);
+    }
+
+    .service-number {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 60px;
+    }
+
+    .service-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-section {
+      padding: 130px 0;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(124,58,237,0.16), transparent 45%),
+        var(--black-soft);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      max-width: 850px;
+      margin: 0 auto 30px;
+    }
+
+    .cta-section p {
+      color: var(--muted);
+      max-width: 550px;
+      margin: 0 auto 35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      color: #77757e;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero-visual {
+        opacity: 0.35;
+        right: -180px;
+      }
+
+      h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 0;
+      }
+
+      .process-item:nth-child(3) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      header {
+        padding: 22px 0;
+      }
+
+      .nav-cta {
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 730px;
+      }
+
+      .hero-visual {
+        right: -260px;
+        opacity: 0.25;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .process {
+        padding: 90px 0;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-item,
+      .process-item:nth-child(3) {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .services {
+        padding: 90px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 220px;
+      }
+
+      .cta-section {
+        padding: 100px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        AGNI<span>.</span>EXPERT
+      </a>
 
-    <header>
-        <nav class="nav">
+      <nav class="nav-links">
+        <a href="#home">Αρχική</a>
+        <a href="#about">Ποιοι είμαστε</a>
+        <a href="#services">Υπηρεσίες</a>
+        <a href="#contact">Επικοινωνία</a>
+      </nav>
 
-            <a href="#" class="logo">
-                AGNI<span>.</span>EXPERT
+      <a href="#contact" class="nav-cta">
+        Μίλησέ μας
+      </a>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Marketing · Strategy · Growth
+          </div>
+
+          <h1>
+            Δεν χρειάζεσαι απλώς περισσότερη προβολή. Χρειάζεσαι τη σωστή.
+          </h1>
+
+          <p class="hero-description">
+            Στρατηγική marketing, campaigns, SEO και content που μετατρέπουν
+            την παρουσία μιας επιχείρησης σε ουσιαστική ανάπτυξη.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">
+              Δες τις υπηρεσίες
             </a>
 
-            <ul class="nav-links">
-                <li><a href="#">Αρχική</a></li>
-                <li><a href="#about">Ποιοι είμαστε</a></li>
-                <li><a href="#services">Υπηρεσίες</a></li>
-                <li><a href="#contact">Επικοινωνία</a></li>
-            </ul>
-
-            <a href="#contact" class="nav-cta">
-                Μίλησέ μας
+            <a href="#contact" class="btn btn-secondary">
+              Επικοινώνησε μαζί μας
             </a>
-
-        </nav>
-    </header>
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-inner">
-
-                <div class="hero-content">
-
-                    <div class="eyebrow">
-                        Marketing · Strategy · Growth
-                    </div>
-
-                    <h1>
-                        Δεν χρειάζεσαι απλώς
-                        περισσότερη προβολή.
-                        <span>Χρειάζεσαι τη σωστή.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Στρατηγική marketing, campaigns, SEO και content
-                        που μετατρέπουν την παρουσία μιας επιχείρησης
-                        σε ουσιαστική ανάπτυξη.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a href="#services" class="button button-primary">
-                            Δες τις υπηρεσίες
-                        </a>
-
-                        <a href="#contact" class="button button-secondary">
-                            Επικοινώνησε μαζί μας
-                        </a>
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="grid-lines"></div>
-
-                    <div class="orb"></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROCESS
-        ========================== -->
-
-        <section class="process">
-
-            <div class="process-inner">
-
-                <div class="process-item">
-                    <div class="process-number">01</div>
-                    <h3>Αναλύουμε</h3>
-                    <p>Κατανοούμε την επιχείρηση, το κοινό και την αγορά.</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="process-number">02</div>
-                    <h3>Σχεδιάζουμε</h3>
-                    <p>Δημιουργούμε μια στρατηγική προσαρμοσμένη στους στόχους σου.</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="process-number">03</div>
-                    <h3>Δημιουργούμε</h3>
-                    <p>Μετατρέπουμε τη στρατηγική σε campaigns και content.</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="process-number">04</div>
-                    <h3>Μετράμε</h3>
-                    <p>Αναλύουμε τα αποτελέσματα και βελτιώνουμε συνεχώς.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SERVICES
-        ========================== -->
-
-        <section class="services" id="services">
-
-            <div class="services-inner">
-
-                <div class="section-label">
-                    What we do
-                </div>
-
-                <h2>
-                    Ό,τι χρειάζεται το brand σου
-                    για να ξεχωρίσει.
-                </h2>
-
-                <div class="service-grid">
-
-                    <article class="service-card">
-
-                        <div class="service-number">01</div>
-
-                        <h3>
-                            Marketing Strategy
-                        </h3>
-
-                        <p>
-                            Στρατηγική που ξεκινά από τους στόχους
-                            της επιχείρησης και καταλήγει σε συγκεκριμένες
-                            marketing ενέργειες.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">02</div>
-
-                        <h3>
-                            Campaigns & Advertising
-                        </h3>
-
-                        <p>
-                            Δημιουργούμε καμπάνιες που τραβούν την προσοχή
-                            και οδηγούν το κοινό στην επόμενη κίνηση.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">03</div>
-
-                        <h3>
-                            SEO & Content
-                        </h3>
-
-                        <p>
-                            Από keyword research μέχρι content strategy,
-                            δημιουργούμε περιεχόμενο που σε βοηθά να σε βρίσκουν.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">04</div>
-
-                        <h3>
-                            Social Media
-                        </h3>
-
-                        <p>
-                            Content planning, δημιουργία περιεχομένου
-                            και διαχείριση social media με συνέπεια.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">05</div>
-
-                        <h3>
-                            Content Creation
-                        </h3>
-
-                        <p>
-                            Κείμενα, concepts και δημιουργικό περιεχόμενο
-                            που επικοινωνεί σωστά την ταυτότητα του brand.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">06</div>
-
-                        <h3>
-                            Performance & Analysis
-                        </h3>
-
-                        <p>
-                            Παρακολουθούμε τα δεδομένα και χρησιμοποιούμε
-                            τα insights για να βελτιώνουμε κάθε επόμενη ενέργεια.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CTA
-        ========================== -->
-
-        <section class="cta" id="contact">
-
-            <div class="cta-inner">
-
-                <div class="section-label">
-                    Let's talk
-                </div>
-
-                <h2>
-                    Έτοιμοι να κάνουμε
-                    το brand σου <span>να ξεχωρίσει;</span>
-                </h2>
-
-                <p>
-                    Πες μας λίγα πράγματα για την επιχείρησή σου
-                    και ας δούμε τι μπορεί να γίνει διαφορετικά.
-                </p>
-
-                <a href="mailto:hello@agnieexpert.gr"
-                   class="button button-primary">
-                    Επικοινώνησε μαζί μας
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-inner">
-
-            <div>
-                © 2026 Agni Expert
-            </div>
-
-            <div>
-                Marketing · Strategy · Growth
-            </div>
+          </div>
 
         </div>
 
-    </footer>
+      </div>
+
+      <!-- ABSTRACT VISUAL -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="ribbon"></div>
+        <div class="ribbon-glow"></div>
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="process" id="about">
+
+      <div class="container">
+
+        <div class="section-label">
+          Ο τρόπος που δουλεύουμε
+        </div>
+
+        <h2 class="section-title">
+          Από τη στρατηγική μέχρι το αποτέλεσμα.
+        </h2>
+
+        <div class="process-grid">
+
+          <div class="process-item">
+            <div class="process-number">01</div>
+            <h3>Αναλύουμε</h3>
+            <p>
+              Κατανοούμε την επιχείρηση, την αγορά, το κοινό και τον ανταγωνισμό.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">02</div>
+            <h3>Σχεδιάζουμε</h3>
+            <p>
+              Δημιουργούμε στρατηγική με ξεκάθαρους στόχους και συγκεκριμένες κατευθύνσεις.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">03</div>
+            <h3>Δημιουργούμε</h3>
+            <p>
+              Μετατρέπουμε τη στρατηγική σε campaigns, content και digital ενέργειες.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">04</div>
+            <h3>Μετράμε</h3>
+            <p>
+              Παρακολουθούμε τα δεδομένα και βελτιώνουμε συνεχώς ό,τι κάνουμε.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="services-header">
+
+          <div>
+            <div class="section-label">
+              Τι κάνουμε
+            </div>
+
+            <h2 class="section-title">
+              Marketing με λόγο ύπαρξης.
+            </h2>
+          </div>
+
+          <p>
+            Δεν ακολουθούμε απλώς trends. Χτίζουμε marketing ενέργειες
+            που εξυπηρετούν έναν πραγματικό επιχειρηματικό στόχο.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-number">01</div>
+            <h3>Marketing Strategy</h3>
+            <p>
+              Στρατηγική marketing και ξεκάθαρο πλάνο δράσης για την επιχείρησή σου.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">02</div>
+            <h3>Campaigns & Advertising</h3>
+            <p>
+              Campaigns και διαφημιστικές ενέργειες σχεδιασμένες γύρω από τον στόχο.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">03</div>
+            <h3>SEO & Content</h3>
+            <p>
+              Περιεχόμενο και SEO που βοηθούν το brand σου να βρίσκεται εκεί που ψάχνει το κοινό του.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">04</div>
+            <h3>Social Media</h3>
+            <p>
+              Στρατηγική και περιεχόμενο για social media με συνέπεια και ξεκάθαρη ταυτότητα.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">05</div>
+            <h3>Content Creation</h3>
+            <p>
+              Δημιουργούμε περιεχόμενο που επικοινωνεί σωστά την αξία του brand.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">06</div>
+            <h3>Performance & Analysis</h3>
+            <p>
+              Μετράμε, αναλύουμε και βελτιστοποιούμε κάθε ενέργεια με βάση τα δεδομένα.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+
+      <div class="container">
+
+        <div class="section-label">
+          Let's talk
+        </div>
+
+        <h2>
+          Έτοιμοι να κάνουμε το brand σου να ξεχωρίσει;
+        </h2>
+
+        <p>
+          Πες μας τι θέλεις να πετύχεις και ας δούμε μαζί πώς μπορεί να γίνει.
+        </p>
+
+        <a href="mailto:hello@agnieexpert.gr" class="btn btn-primary">
+          Επικοινώνησε μαζί μας
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Agni Expert. All rights reserved.
+      </div>
+
+      <div>
+        Marketing · Strategy · Growth
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
-```
