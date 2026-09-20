@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Agni Expert | Marketing · Strategy · Growth</title>
+  <title>Agni Expert — Marketing · Strategy · Growth</title>
 
   <meta
     name="description"
-    content="Agni Expert — Marketing strategy, campaigns, SEO, content και performance."
-  >
+    content="Agni Expert — Στρατηγική marketing, campaigns, SEO, content και social media που μετατρέπουν τις ιδέες σε πράξη."
+  />
 
+  <meta name="theme-color" content="#0a0a0c" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
-  >
+  />
 
   <style>
+    /* =========================================================
+       AGNI EXPERT — VISUAL REDESIGN V1
+       ========================================================= */
 
     :root {
-      --black: #08080a;
+      --black: #0a0a0c;
       --black-soft: #101014;
-      --black-card: #15151b;
+      --white: #f5f3ef;
+      --white-soft: #d8d5d0;
+      --muted: #96929a;
 
-      --white: #f7f6f8;
-      --muted: #a4a2ac;
-
-      --purple: #8b5cf6;
-      --purple-dark: #6d28d9;
+      --purple: #7c3aed;
+      --purple-bright: #8b5cf6;
       --lilac: #c4b5fd;
 
-      --border: rgba(255,255,255,0.10);
+      --border-dark: rgba(255,255,255,0.10);
+      --border-light: rgba(10,10,12,0.12);
+
+      --radius: 24px;
+      --max-width: 1240px;
     }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
 
     * {
       margin: 0;
@@ -47,10 +59,11 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
       background: var(--black);
       color: var(--white);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -64,23 +77,67 @@
       font: inherit;
     }
 
+    ::selection {
+      background: var(--purple);
+      color: white;
+    }
+
+    /* =========================================================
+       TYPOGRAPHY
+       ========================================================= */
+
+    /*
+      Η CF Asty είναι η βασική αισθητική αναφορά των headings.
+      Μέχρι να έχουμε το actual font file, χρησιμοποιούμε
+      Manrope ως κοντινή web-safe προσέγγιση.
+    */
+
+    h1,
+    h2,
+    h3,
+    .logo,
+    .eyebrow,
+    .big-number,
+    .statement {
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -0.045em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       CONTAINER
+       ========================================================= */
+
     .container {
-      width: min(1180px, calc(100% - 48px));
+      width: min(var(--max-width), calc(100% - 48px));
       margin: 0 auto;
     }
 
-
-    /* =========================
+    /* =========================================================
        HEADER
-    ========================= */
+       ========================================================= */
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      z-index: 20;
-      padding: 28px 0;
+      right: 0;
+      z-index: 1000;
+
+      padding: 24px 0;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,12,0.94),
+        rgba(10,10,12,0)
+      );
+
+      backdrop-filter: blur(8px);
     }
 
     .nav {
@@ -90,10 +147,9 @@
     }
 
     .logo {
-      font-family: "Manrope", sans-serif;
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 800;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.06em;
     }
 
     .logo span {
@@ -104,104 +160,137 @@
       display: flex;
       align-items: center;
       gap: 34px;
-      font-size: 14px;
-      color: #d1cfd6;
+      list-style: none;
     }
 
     .nav-links a {
+      color: rgba(245,243,239,0.72);
+      font-size: 14px;
+      font-weight: 500;
       transition: color 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: var(--lilac);
+      color: var(--white);
     }
 
-    .nav-button {
-      border: 1px solid var(--border);
-      padding: 11px 19px;
-      border-radius: 100px;
-      font-size: 14px;
-      transition: all 0.25s ease;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 11px 18px;
+
+      border: 1px solid rgba(196,181,253,0.35);
+      border-radius: 999px;
+
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
     }
 
-    .nav-button:hover {
-      border-color: rgba(196,181,253,0.5);
-      background: rgba(139,92,246,0.08);
+    .nav-cta:hover {
+      background: rgba(124,58,237,0.16);
+      border-color: rgba(196,181,253,0.65);
+      transform: translateY(-1px);
     }
 
-
-    /* =========================
+    /* =========================================================
        HERO
-    ========================= */
+       ========================================================= */
 
     .hero {
-      min-height: 820px;
+      position: relative;
+      min-height: 100vh;
+
       display: flex;
       align-items: center;
-      position: relative;
-      overflow: hidden;
 
-      background:
-        radial-gradient(
-          circle at 78% 48%,
-          rgba(124,58,237,0.10),
-          transparent 30%
-        ),
-        var(--black);
+      padding: 150px 0 100px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -180px;
+      top: 120px;
+
+      background: rgba(124,58,237,0.12);
+      filter: blur(130px);
+      border-radius: 50%;
+
+      pointer-events: none;
     }
 
     .hero-content {
-      width: 62%;
       position: relative;
-      z-index: 5;
-      padding-top: 50px;
+      z-index: 2;
+
+      width: 72%;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
 
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      margin-bottom: 30px;
 
       color: var(--lilac);
-      margin-bottom: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
       width: 28px;
       height: 1px;
-      background: var(--purple);
+      background: var(--lilac);
     }
 
     .hero h1 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(54px, 6.5vw, 86px);
-      line-height: 0.98;
+      max-width: 920px;
+
+      font-size: clamp(58px, 7.3vw, 104px);
+      line-height: 0.94;
+      font-weight: 700;
+
       letter-spacing: -0.065em;
-      max-width: 850px;
-      margin-bottom: 30px;
     }
 
-    .hero h1 span {
+    .hero h1 .accent {
       color: var(--lilac);
     }
 
-    .hero-text {
-      max-width: 620px;
+    .hero-description {
+      max-width: 590px;
+
+      margin-top: 34px;
+
+      color: var(--white-soft);
       font-size: 18px;
-      color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 38px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
+      align-items: center;
       gap: 14px;
-      flex-wrap: wrap;
+
+      margin-top: 42px;
     }
 
     .btn {
@@ -209,14 +298,18 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 52px;
-      padding: 0 23px;
+      min-height: 50px;
+      padding: 0 22px;
 
-      border-radius: 100px;
+      border-radius: 999px;
+
       font-size: 14px;
       font-weight: 600;
 
-      transition: all 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .btn-primary {
@@ -225,59 +318,43 @@
     }
 
     .btn-primary:hover {
-      background: var(--lilac);
       transform: translateY(-2px);
+      background: var(--lilac);
     }
 
     .btn-secondary {
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-dark);
       color: var(--white);
     }
 
     .btn-secondary:hover {
-      border-color: rgba(196,181,253,0.5);
-      background: rgba(139,92,246,0.08);
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.24);
     }
 
-
-    /* =========================
-       ABSTRACT VISUAL
-    ========================= */
+    /* =========================================================
+       HERO FLOW VISUAL
+       ========================================================= */
 
     .hero-visual {
       position: absolute;
-      right: -30px;
+
+      right: -20px;
       top: 50%;
+
+      width: 600px;
+      height: 650px;
+
       transform: translateY(-50%);
-      width: 570px;
-      height: 620px;
+
       pointer-events: none;
-    }
-
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-
-      width: 320px;
-      height: 320px;
-
-      right: 60px;
-      top: 150px;
-
-      background: rgba(124,58,237,0.13);
-      filter: blur(100px);
-      border-radius: 50%;
+      z-index: 1;
     }
 
     .flow {
-      position: absolute;
-
-      width: 680px;
-      height: 600px;
-
-      right: -110px;
-      top: 0;
-
+      width: 100%;
+      height: 100%;
       overflow: visible;
     }
 
@@ -288,56 +365,122 @@
 
     .flow-main {
       stroke: url(#purpleGradient);
-      stroke-width: 5;
+      stroke-width: 2.5;
       opacity: 0.95;
-
-      filter:
-        drop-shadow(
-          0 0 12px rgba(139,92,246,0.35)
-        );
     }
 
     .flow-secondary {
-      stroke: rgba(196,181,253,0.42);
-      stroke-width: 1.5;
+      stroke: #8b5cf6;
+      stroke-width: 1.4;
+      opacity: 0.42;
     }
 
     .flow-third {
-      stroke: rgba(139,92,246,0.30);
-      stroke-width: 2;
+      stroke: #c4b5fd;
+      stroke-width: 1;
+      opacity: 0.27;
     }
 
     .flow-fourth {
-      stroke: rgba(196,181,253,0.18);
-      stroke-width: 1;
+      stroke: #7c3aed;
+      stroke-width: 1.2;
+      opacity: 0.32;
     }
 
+    /* =========================================================
+       SCROLL INDICATOR
+       ========================================================= */
 
-    /* =========================
-       PROCESS
-    ========================= */
+    .hero-bottom {
+      position: absolute;
+      bottom: 36px;
+      left: 0;
+      right: 0;
 
-    .process {
-      padding: 130px 0;
-      border-top: 1px solid var(--border);
-      background: var(--black-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: rgba(245,243,239,0.38);
+
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 100px;
+      height: 1px;
+      background: rgba(255,255,255,0.16);
+    }
+
+    /* =========================================================
+       GENERAL SECTION
+       ========================================================= */
+
+    section {
+      position: relative;
+    }
+
+    .section-dark {
+      background: var(--black);
+    }
+
+    .section-soft {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .section-padding {
+      padding: 150px 0;
     }
 
     .section-label {
-      color: var(--lilac);
-      font-size: 13px;
-      text-transform: uppercase;
+      margin-bottom: 28px;
+
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.13em;
-      margin-bottom: 18px;
+      text-transform: uppercase;
     }
 
     .section-title {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      max-width: 750px;
-      margin-bottom: 65px;
+      max-width: 900px;
+
+      font-size: clamp(46px, 6vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    .section-intro {
+      max-width: 570px;
+
+      margin-top: 28px;
+
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       PROCESS
+       ========================================================= */
+
+    .process {
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .process-header {
+      display: grid;
+      grid-template-columns: 0.8fr 2fr;
+      gap: 80px;
+
+      margin-bottom: 90px;
+    }
+
+    .process-header .section-title {
+      max-width: 760px;
     }
 
     .process-grid {
@@ -345,227 +488,359 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
 
-      background: var(--border);
-      border: 1px solid var(--border);
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
     }
 
     .process-item {
-      background: var(--black-soft);
+      min-height: 300px;
+
       padding: 34px 28px;
-      min-height: 220px;
+
+      border-right: 1px solid var(--border-dark);
+
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
     }
 
-    .process-number {
-      color: var(--purple);
+    .process-item:last-child {
+      border-right: none;
+    }
+
+    .process-item:hover {
+      background: rgba(124,58,237,0.06);
+    }
+
+    .big-number {
+      color: var(--lilac);
+
       font-size: 13px;
-      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
     .process-item h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 21px;
-      margin-bottom: 12px;
+      margin-top: 90px;
+
+      font-size: 28px;
+      line-height: 1.05;
     }
 
     .process-item p {
+      margin-top: 16px;
+
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.65;
     }
 
+    /* =========================================================
+       STATEMENT
+       ========================================================= */
 
-    /* =========================
+    .statement-section {
+      padding: 170px 0;
+
+      background:
+        radial-gradient(
+          circle at 75% 50%,
+          rgba(124,58,237,0.13),
+          transparent 28%
+        ),
+        var(--black-soft);
+    }
+
+    .statement {
+      max-width: 1060px;
+
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.98;
+    }
+
+    .statement .muted {
+      color: #5f5b63;
+    }
+
+    .statement .highlight {
+      color: var(--lilac);
+    }
+
+    /* =========================================================
        SERVICES
-    ========================= */
+       ========================================================= */
 
-    .services {
-      padding: 140px 0;
-      background: var(--black);
+    .services-section {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .services-section .section-label {
+      color: var(--purple);
     }
 
     .services-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 40px;
-      margin-bottom: 65px;
+      gap: 50px;
+
+      margin-bottom: 80px;
     }
 
-    .services-intro {
-      max-width: 410px;
-      color: var(--muted);
+    .services-header .section-title {
+      max-width: 800px;
+    }
+
+    .services-header p {
+      max-width: 340px;
+
+      color: #68656a;
+      font-size: 15px;
       line-height: 1.7;
     }
 
-    .services-grid {
+    .services-list {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .service-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--border);
+      grid-template-columns: 90px 1fr 70px;
+      align-items: center;
+      gap: 30px;
+
+      min-height: 125px;
+
+      border-bottom: 1px solid var(--border-light);
+
+      transition:
+        padding 0.3s ease,
+        background 0.3s ease;
     }
 
-    .service {
-      padding: 35px 0;
-      border-bottom: 1px solid var(--border);
-      transition: padding-left 0.25s ease;
+    .service-row:hover {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      background: rgba(124,58,237,0.035);
     }
 
-    .service:nth-child(odd) {
-      padding-right: 40px;
-      border-right: 1px solid var(--border);
+    .service-number {
+      color: #8b8790;
+
+      font-size: 12px;
+      font-weight: 600;
     }
 
-    .service:nth-child(even) {
-      padding-left: 40px;
-    }
-
-    .service:hover {
-      padding-left: 12px;
-    }
-
-    .service:nth-child(even):hover {
-      padding-left: 52px;
-    }
-
-    .service h3 {
+    .service-name {
       font-family: "Manrope", sans-serif;
-      font-size: 23px;
-      margin-bottom: 9px;
+
+      font-size: clamp(28px, 3vw, 46px);
+      font-weight: 600;
+      letter-spacing: -0.05em;
     }
 
-    .service p {
+    .service-arrow {
+      display: flex;
+      justify-content: flex-end;
+
+      color: var(--purple);
+
+      font-size: 25px;
+
+      transition: transform 0.25s ease;
+    }
+
+    .service-row:hover .service-arrow {
+      transform: translateX(6px);
+    }
+
+    /* =========================================================
+       ABOUT / WHY
+       ========================================================= */
+
+    .why-section {
+      background: var(--black);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 120px;
+      align-items: start;
+    }
+
+    .why-copy h2 {
+      max-width: 560px;
+
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 0.98;
+    }
+
+    .why-copy p {
+      max-width: 540px;
+
+      margin-top: 32px;
+
       color: var(--muted);
-      max-width: 450px;
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 17px;
+      line-height: 1.75;
     }
 
+    .why-points {
+      border-top: 1px solid var(--border-dark);
+    }
 
-    /* =========================
+    .why-point {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 20px;
+
+      padding: 30px 0;
+
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .why-point span {
+      color: var(--lilac);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .why-point h3 {
+      font-size: 21px;
+      letter-spacing: -0.03em;
+    }
+
+    .why-point p {
+      margin-top: 8px;
+
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
        CONTACT
-    ========================= */
+       ========================================================= */
 
-    .contact {
-      padding: 140px 0;
-      background: var(--black-soft);
-      border-top: 1px solid var(--border);
+    .contact-section {
+      background: var(--white);
+      color: var(--black);
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 100px;
-      align-items: start;
+      gap: 120px;
     }
 
-    .contact-title {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      margin-bottom: 25px;
+    .contact-copy h2 {
+      max-width: 620px;
+
+      font-size: clamp(52px, 6.5vw, 88px);
+      line-height: 0.95;
     }
 
-    .contact-title span {
-      color: var(--lilac);
-    }
-
-    .contact-text {
-      color: var(--muted);
+    .contact-copy > p {
       max-width: 450px;
+
+      margin-top: 28px;
+
+      color: #68656a;
+      font-size: 16px;
       line-height: 1.7;
-      margin-bottom: 35px;
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      color: #d9d7df;
+    .contact-details {
+      margin-top: 45px;
+    }
+
+    .contact-detail {
+      display: block;
+
+      margin-top: 12px;
+
+      color: var(--black);
       font-size: 15px;
+      font-weight: 600;
     }
 
     .contact-form {
-      display: grid;
-      gap: 18px;
+      padding-top: 5px;
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+    .field {
+      position: relative;
+
+      margin-bottom: 28px;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .field label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: #6d6970;
+
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .form-group label {
-      font-size: 13px;
-      color: #d0ced6;
-    }
-
-    .form-group input,
-    .form-group textarea {
+    .field input,
+    .field textarea {
       width: 100%;
 
-      border: 1px solid var(--border);
-      background: #0d0d11;
-      color: var(--white);
+      padding: 15px 0;
 
-      padding: 15px 16px;
-      border-radius: 8px;
-
+      border: none;
+      border-bottom: 1px solid rgba(10,10,12,0.2);
       outline: none;
 
-      transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      background: transparent;
+      color: var(--black);
+
+      font-size: 16px;
+
+      transition: border-color 0.25s ease;
     }
 
-    .form-group input {
-      height: 52px;
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--purple);
     }
 
-    .form-group textarea {
-      min-height: 150px;
+    .field textarea {
+      min-height: 120px;
       resize: vertical;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: rgba(139,92,246,0.75);
-
-      box-shadow:
-        0 0 0 3px rgba(139,92,246,0.08);
+    .form-submit {
+      margin-top: 10px;
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #66646d;
-    }
-
-    .contact-submit {
-      margin-top: 5px;
+    .form-submit button {
       border: none;
       cursor: pointer;
-      width: fit-content;
     }
 
+    /* =========================================================
+       FINAL CTA
+       ========================================================= */
 
-    /* =========================
-       CTA
-    ========================= */
+    .final-cta {
+      padding: 130px 0;
 
-    .cta {
-      padding: 120px 0;
-      position: relative;
+      background: var(--purple);
+      color: white;
+
       overflow: hidden;
-      border-top: 1px solid var(--border);
     }
 
-    .cta::before {
+    .final-cta::after {
       content: "";
 
       position: absolute;
@@ -573,235 +848,315 @@
       width: 500px;
       height: 500px;
 
-      right: -100px;
-      top: -200px;
+      right: -180px;
+      top: -180px;
 
-      background: rgba(109,40,217,0.12);
-      filter: blur(120px);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 50%;
     }
 
-    .cta-inner {
+    .final-cta-inner {
       position: relative;
       z-index: 2;
 
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-
-      gap: 40px;
+      gap: 50px;
     }
 
-    .cta h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      max-width: 760px;
+    .final-cta h2 {
+      max-width: 850px;
+
+      font-size: clamp(48px, 6.5vw, 86px);
+      line-height: 0.96;
     }
 
-    .cta h2 span {
-      color: var(--lilac);
+    .final-cta p {
+      max-width: 300px;
+
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
+    .final-cta .btn {
+      background: white;
+      color: var(--black);
+      flex-shrink: 0;
+    }
 
-    /* =========================
+    /* =========================================================
        FOOTER
-    ========================= */
+       ========================================================= */
 
     footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
+      padding: 35px 0;
+
       background: var(--black);
+      color: rgba(245,243,239,0.5);
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 30px;
 
-      color: #77757e;
       font-size: 12px;
     }
 
     .footer-brand {
       color: var(--white);
+      font-family: "Manrope", sans-serif;
       font-weight: 700;
     }
 
+    .footer-tagline {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-    /* =========================
+    /* =========================================================
        RESPONSIVE
-    ========================= */
+       ========================================================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
+      .hero-content {
+        width: 80%;
+      }
+
+      .hero-visual {
+        right: -150px;
+        opacity: 0.75;
+      }
+
+      .process-header {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .why-grid,
+      .contact-grid {
+        gap: 70px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        width: min(100% - 36px, var(--max-width));
+      }
+
+      header {
+        padding: 20px 0;
+      }
 
       .nav-links {
         display: none;
       }
 
+      .nav-cta {
+        padding: 9px 14px;
+        font-size: 12px;
+      }
+
       .hero {
-        min-height: 760px;
+        min-height: auto;
+        padding: 145px 0 110px;
       }
 
       .hero-content {
         width: 100%;
       }
 
-      .hero-visual {
-        opacity: 0.4;
-        right: -230px;
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .services-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .cta-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-
-    @media (max-width: 600px) {
-
-      .container {
-        width: calc(100% - 32px);
-      }
-
-      header {
-        padding: 22px 0;
-      }
-
-      .nav-button {
-        display: none;
-      }
-
-      .hero {
-        min-height: 700px;
-      }
-
       .hero h1 {
-        font-size: 48px;
+        font-size: clamp(52px, 15vw, 78px);
       }
 
-      .hero-text {
+      .hero-description {
         font-size: 16px;
       }
 
-      .hero-visual {
-        right: -330px;
-        opacity: 0.25;
+      .hero-actions {
+        flex-wrap: wrap;
       }
 
-      .process,
-      .services,
-      .contact {
-        padding: 90px 0;
+      .hero-visual {
+        right: -260px;
+        top: 53%;
+        width: 560px;
+        height: 600px;
+        opacity: 0.5;
+      }
+
+      .hero-bottom {
+        display: none;
+      }
+
+      .section-padding {
+        padding: 105px 0;
       }
 
       .process-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service:nth-child(odd) {
-        padding-right: 0;
+      .process-item:nth-child(2) {
         border-right: none;
       }
 
-      .service:nth-child(even) {
-        padding-left: 0;
+      .process-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border-dark);
       }
 
-      .service:nth-child(even):hover {
-        padding-left: 12px;
+      .services-header {
+        display: block;
       }
 
-      .form-row {
+      .services-header p {
+        margin-top: 25px;
+      }
+
+      .service-row {
+        grid-template-columns: 45px 1fr 30px;
+        gap: 15px;
+      }
+
+      .service-name {
+        font-size: 28px;
+      }
+
+      .why-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-title {
-        font-size: 48px;
+      .why-grid {
+        gap: 70px;
       }
 
-      .cta {
-        padding: 90px 0;
+      .contact-grid {
+        gap: 65px;
+      }
+
+      .final-cta-inner {
+        display: block;
+      }
+
+      .final-cta p {
+        margin-top: 25px;
+      }
+
+      .final-cta .btn {
+        margin-top: 30px;
       }
 
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
       }
     }
 
+    @media (max-width: 520px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-item,
+      .process-item:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid var(--border-dark);
+      }
+
+      .process-item:last-child {
+        border-bottom: none;
+      }
+
+      .process-item h3 {
+        margin-top: 60px;
+      }
+
+      .statement {
+        font-size: 48px;
+      }
+
+      .service-row {
+        min-height: 105px;
+      }
+
+      .service-name {
+        font-size: 24px;
+      }
+
+      .service-number {
+        font-size: 11px;
+      }
+
+      .contact-copy h2 {
+        font-size: 52px;
+      }
+    }
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================
+  <!-- =======================================================
        HEADER
-  ========================= -->
+       ======================================================= -->
 
   <header>
+    <div class="container">
+      <nav class="nav">
 
-    <div class="container nav">
-
-      <a href="#" class="logo">
-        AGNI<span>.</span>EXPERT
-      </a>
-
-      <nav class="nav-links">
-
-        <a href="#about">
-          Ποιοι είμαστε
+        <a href="#home" class="logo">
+          AGNI<span>.</span>EXPERT
         </a>
 
-        <a href="#services">
-          Υπηρεσίες
-        </a>
+        <ul class="nav-links">
+          <li><a href="#process">Πώς δουλεύουμε</a></li>
+          <li><a href="#services">Υπηρεσίες</a></li>
+          <li><a href="#about">Γιατί Agni</a></li>
+          <li><a href="#contact">Επικοινωνία</a></li>
+        </ul>
 
-        <a href="#contact">
-          Επικοινωνία
+        <a href="#contact" class="nav-cta">
+          Μίλησέ μας →
         </a>
 
       </nav>
-
-      <a href="#contact" class="nav-button">
-        Μίλησέ μας
-      </a>
-
     </div>
-
   </header>
 
 
-  <!-- =========================
+  <!-- =======================================================
        HERO
-  ========================= -->
+       ======================================================= -->
 
   <main>
 
-    <section class="hero">
+    <section class="hero" id="home">
 
       <div class="container">
 
@@ -812,18 +1167,18 @@
           </div>
 
           <h1>
-            Δεν χρειάζεσαι απλώς
-            περισσότερη προβολή.
-            <span>Χρειάζεσαι τη σωστή.</span>
+            Το μάρκετινγκ<br>
+            που φανταζόσουν,<br>
+            <span class="accent">σε πράξη.</span>
           </h1>
 
-          <p class="hero-text">
-            Στρατηγική marketing, campaigns, SEO και content
-            που μετατρέπουν την παρουσία μιας επιχείρησης
-            σε ουσιαστική ανάπτυξη.
+          <p class="hero-description">
+            Στρατηγική, δημιουργικό και υλοποίηση για επιχειρήσεις
+            που θέλουν το marketing τους να έχει κατεύθυνση,
+            συνέπεια και ουσιαστικό αποτέλεσμα.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
 
             <a href="#services" class="btn btn-primary">
               Δες τις υπηρεσίες
@@ -837,191 +1192,168 @@
 
         </div>
 
-
-        <!-- ABSTRACT VISUAL -->
-
-        <div class="hero-visual" aria-hidden="true">
-
-          <svg
-            class="flow"
-            viewBox="0 0 680 600"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-
-            <defs>
-
-              <linearGradient
-                id="purpleGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-
-                <stop
-                  offset="0%"
-                  stop-color="#6d28d9"
-                />
-
-                <stop
-                  offset="45%"
-                  stop-color="#8b5cf6"
-                />
-
-                <stop
-                  offset="75%"
-                  stop-color="#c4b5fd"
-                />
-
-                <stop
-                  offset="100%"
-                  stop-color="#7c3aed"
-                />
-
-              </linearGradient>
-
-            </defs>
+      </div>
 
 
-            <path
-              class="flow-main"
-              d="M680 35
-                 C590 55, 525 105, 485 180
-                 C445 255, 455 325, 385 365
-                 C315 405, 190 365, 145 425
-                 C95 490, 135 555, 30 595"
-            />
+      <!-- ABSTRACT FLOW -->
+
+      <div class="hero-visual">
+
+        <svg
+          class="flow"
+          viewBox="0 0 680 600"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="purpleGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#6d28d9"/>
+              <stop offset="45%" stop-color="#8b5cf6"/>
+              <stop offset="75%" stop-color="#c4b5fd"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+
+          </defs>
+
+          <path
+            class="flow-main"
+            d="M680 35
+               C590 55, 525 105, 485 180
+               C445 255, 455 325, 385 365
+               C315 405, 190 365, 145 425
+               C95 490, 135 555, 30 595"
+          />
+
+          <path
+            class="flow-secondary"
+            d="M680 105
+               C575 110, 535 155, 505 220
+               C470 295, 470 350, 395 395
+               C320 440, 205 415, 160 470
+               C120 520, 130 565, 55 600"
+          />
+
+          <path
+            class="flow-third"
+            d="M680 -15
+               C600 5, 550 70, 525 145
+               C495 235, 520 300, 440 345
+               C360 390, 235 335, 175 400
+               C115 465, 165 530, 65 575"
+          />
+
+          <path
+            class="flow-fourth"
+            d="M680 160
+               C615 165, 565 205, 550 270
+               C535 330, 500 380, 420 420
+               C345 458, 250 430, 200 485
+               C155 535, 165 570, 100 600"
+          />
+
+        </svg>
+
+      </div>
 
 
-            <path
-              class="flow-secondary"
-              d="M680 105
-                 C575 110, 535 155, 505 220
-                 C470 295, 470 350, 395 395
-                 C320 440, 205 415, 160 470
-                 C120 520, 130 565, 55 600"
-            />
-
-
-            <path
-              class="flow-third"
-              d="M680 -15
-                 C600 5, 550 70, 525 145
-                 C495 235, 520 300, 440 345
-                 C360 390, 235 335, 175 400
-                 C115 465, 165 530, 65 575"
-            />
-
-
-            <path
-              class="flow-fourth"
-              d="M680 160
-                 C615 165, 565 205, 550 270
-                 C535 330, 500 380, 420 420
-                 C345 458, 250 430, 200 485
-                 C155 535, 165 570, 100 600"
-            />
-
-          </svg>
-
+      <div class="container">
+        <div class="hero-bottom">
+          <span>Scroll to explore</span>
+          <span class="scroll-line"></span>
+          <span>01 — 06</span>
         </div>
-
       </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          PROCESS
-    ========================= -->
+         ===================================================== -->
 
-    <section class="process" id="about">
+    <section class="section-dark section-padding process" id="process">
 
       <div class="container">
 
-        <div class="section-label">
-          Η προσέγγισή μας
-        </div>
+        <div class="process-header">
 
-        <h2 class="section-title">
-          Από τη στρατηγική μέχρι το αποτέλεσμα.
-        </h2>
+          <div>
+            <div class="section-label">
+              How we work
+            </div>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Από τη στρατηγική<br>
+              μέχρι το αποτέλεσμα.
+            </h2>
+
+            <p class="section-intro">
+              Δεν ξεκινάμε από το post. Ξεκινάμε από το
+              τι θέλεις να πετύχεις και χτίζουμε από εκεί.
+            </p>
+          </div>
+
+        </div>
 
 
         <div class="process-grid">
 
-
           <div class="process-item">
+            <div class="big-number">01</div>
 
-            <div class="process-number">
-              01
-            </div>
-
-            <h3>
-              Αναλύουμε
-            </h3>
+            <h3>Αναλύουμε.</h3>
 
             <p>
-              Κατανοούμε την επιχείρηση, την αγορά,
-              το κοινό και τους πραγματικούς στόχους.
+              Κατανοούμε την επιχείρηση, το κοινό,
+              την αγορά και τους πραγματικούς στόχους.
             </p>
-
           </div>
 
 
           <div class="process-item">
+            <div class="big-number">02</div>
 
-            <div class="process-number">
-              02
-            </div>
-
-            <h3>
-              Σχεδιάζουμε
-            </h3>
+            <h3>Σχεδιάζουμε.</h3>
 
             <p>
-              Δημιουργούμε μια ξεκάθαρη marketing
-              στρατηγική με συγκεκριμένες προτεραιότητες.
+              Μετατρέπουμε τα δεδομένα σε ξεκάθαρη
+              marketing στρατηγική και πλάνο δράσης.
             </p>
-
           </div>
 
 
           <div class="process-item">
+            <div class="big-number">03</div>
 
-            <div class="process-number">
-              03
-            </div>
-
-            <h3>
-              Δημιουργούμε
-            </h3>
+            <h3>Υλοποιούμε.</h3>
 
             <p>
-              Υλοποιούμε campaigns, content και
-              ενέργειες που υπηρετούν τη στρατηγική.
+              Από campaigns και content μέχρι SEO,
+              social media και digital ενέργειες.
             </p>
-
           </div>
 
 
           <div class="process-item">
+            <div class="big-number">04</div>
 
-            <div class="process-number">
-              04
-            </div>
-
-            <h3>
-              Μετράμε
-            </h3>
+            <h3>Μετράμε.</h3>
 
             <p>
-              Παρακολουθούμε τα δεδομένα και
-              βελτιστοποιούμε συνεχώς την απόδοση.
+              Παρακολουθούμε τι λειτουργεί,
+              τι χρειάζεται αλλαγή και πού υπάρχει
+              πραγματική ευκαιρία ανάπτυξης.
             </p>
-
           </div>
-
 
         </div>
 
@@ -1030,11 +1362,38 @@
     </section>
 
 
-    <!-- =========================
-         SERVICES
-    ========================= -->
+    <!-- =====================================================
+         STATEMENT
+         ===================================================== -->
 
-    <section class="services" id="services">
+    <section class="statement-section">
+
+      <div class="container">
+
+        <div class="statement">
+
+          <span class="muted">
+            Δεν χρειάζεσαι
+          </span>
+
+          απλώς περισσότερη προβολή.
+
+          <span class="highlight">
+            Χρειάζεσαι κατεύθυνση.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section class="services-section section-padding" id="services">
 
       <div class="container">
 
@@ -1043,110 +1402,91 @@
           <div>
 
             <div class="section-label">
-              Τι κάνουμε
+              What we do
             </div>
 
             <h2 class="section-title">
-              Marketing με λόγο ύπαρξης.
+              Marketing με<br>
+              λόγο ύπαρξης.
             </h2>
 
           </div>
 
-          <p class="services-intro">
-            Δεν δημιουργούμε απλώς περισσότερη επικοινωνία.
-            Δημιουργούμε marketing που έχει συγκεκριμένο
-            στόχο και μπορεί να μετρηθεί.
+          <p>
+            Από τη στρατηγική μέχρι την καθημερινή υλοποίηση,
+            δημιουργούμε τις ενέργειες που χρειάζεται
+            πραγματικά η επιχείρησή σου.
           </p>
 
         </div>
 
 
-        <div class="services-grid">
+        <div class="services-list">
 
+          <a href="#contact" class="service-row">
+            <span class="service-number">01</span>
 
-          <div class="service">
-
-            <h3>
+            <span class="service-name">
               Marketing Strategy
-            </h3>
+            </span>
 
-            <p>
-              Στρατηγική, positioning και πλάνο ενεργειών
-              που συνδέουν το marketing με τους επιχειρηματικούς στόχους.
-            </p>
-
-          </div>
+            <span class="service-arrow">↗</span>
+          </a>
 
 
-          <div class="service">
+          <a href="#contact" class="service-row">
+            <span class="service-number">02</span>
 
-            <h3>
+            <span class="service-name">
               Campaigns & Advertising
-            </h3>
+            </span>
 
-            <p>
-              Digital campaigns και paid advertising
-              με στόχευση, δημιουργικό και ξεκάθαρα KPIs.
-            </p>
-
-          </div>
+            <span class="service-arrow">↗</span>
+          </a>
 
 
-          <div class="service">
+          <a href="#contact" class="service-row">
+            <span class="service-number">03</span>
 
-            <h3>
+            <span class="service-name">
               SEO & Content
-            </h3>
+            </span>
 
-            <p>
-              Περιεχόμενο και SEO ενέργειες που βοηθούν
-              μια επιχείρηση να αποκτήσει μεγαλύτερη οργανική παρουσία.
-            </p>
-
-          </div>
+            <span class="service-arrow">↗</span>
+          </a>
 
 
-          <div class="service">
+          <a href="#contact" class="service-row">
+            <span class="service-number">04</span>
 
-            <h3>
+            <span class="service-name">
               Social Media
-            </h3>
+            </span>
 
-            <p>
-              Social media με στρατηγική, συνέπεια
-              και περιεχόμενο που έχει λόγο να υπάρχει.
-            </p>
-
-          </div>
+            <span class="service-arrow">↗</span>
+          </a>
 
 
-          <div class="service">
+          <a href="#contact" class="service-row">
+            <span class="service-number">05</span>
 
-            <h3>
+            <span class="service-name">
               Content Creation
-            </h3>
+            </span>
 
-            <p>
-              Δημιουργικό περιεχόμενο που μεταφέρει
-              σωστά την ταυτότητα και την αξία ενός brand.
-            </p>
-
-          </div>
+            <span class="service-arrow">↗</span>
+          </a>
 
 
-          <div class="service">
+          <a href="#contact" class="service-row">
+            <span class="service-number">06</span>
 
-            <h3>
+            <span class="service-name">
               Performance & Analysis
-            </h3>
+            </span>
 
-            <p>
-              Data, reporting και συνεχή βελτιστοποίηση
-              για να ξέρουμε τι λειτουργεί και γιατί.
-            </p>
-
-          </div>
-
+            <span class="service-arrow">↗</span>
+          </a>
 
         </div>
 
@@ -1155,53 +1495,163 @@
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+    <!-- =====================================================
+         WHY AGNI
+         ===================================================== -->
 
-    <section class="contact" id="contact">
+    <section class="why-section section-padding" id="about">
+
+      <div class="container">
+
+        <div class="why-grid">
+
+          <div class="why-copy">
+
+            <div class="section-label">
+              Why Agni
+            </div>
+
+            <h2>
+              Δεν είμαστε απλώς άλλο ένα agency.
+            </h2>
+
+            <p>
+              Το marketing έχει αξία όταν συνδέεται
+              με τον πραγματικό στόχο μιας επιχείρησης.
+              Γι' αυτό δεν ξεκινάμε από το τι μπορούμε
+              να κάνουμε. Ξεκινάμε από το τι χρειάζεται
+              να γίνει.
+            </p>
+
+          </div>
+
+
+          <div class="why-points">
+
+            <div class="why-point">
+
+              <span>01</span>
+
+              <div>
+                <h3>Strategy first.</h3>
+
+                <p>
+                  Κάθε ενέργεια ξεκινά από έναν ξεκάθαρο
+                  στόχο και όχι από μια τυχαία ιδέα.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="why-point">
+
+              <span>02</span>
+
+              <div>
+                <h3>Thinking + doing.</h3>
+
+                <p>
+                  Δεν μένουμε στη θεωρία. Σχεδιάζουμε
+                  και μετά αναλαμβάνουμε την υλοποίηση.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="why-point">
+
+              <span>03</span>
+
+              <div>
+                <h3>Clear communication.</h3>
+
+                <p>
+                  Ξέρεις τι κάνουμε, γιατί το κάνουμε
+                  και τι περιμένουμε να πετύχουμε.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="why-point">
+
+              <span>04</span>
+
+              <div>
+                <h3>Built around your business.</h3>
+
+                <p>
+                  Δεν πιστεύουμε σε έτοιμες συνταγές.
+                  Η στρατηγική προσαρμόζεται στην επιχείρηση.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section class="contact-section section-padding" id="contact">
 
       <div class="container">
 
         <div class="contact-grid">
 
-
-          <!-- LEFT SIDE -->
-
-          <div>
+          <div class="contact-copy">
 
             <div class="section-label">
-              Επικοινωνία
+              Let's talk
             </div>
 
-            <h2 class="contact-title">
-              Έχεις ένα project
-              <span>στο μυαλό σου;</span>
+            <h2>
+              Έχεις μια ιδέα;<br>
+              Ας την κάνουμε πράξη.
             </h2>
 
-            <p class="contact-text">
+            <p>
               Πες μας λίγα πράγματα για την επιχείρησή σου
-              και αυτό που θέλεις να πετύχεις.
-              Θα επικοινωνήσουμε μαζί σου για να δούμε
-              πώς μπορούμε να το κάνουμε πράξη.
+              και τι θέλεις να πετύχεις. Τα υπόλοιπα
+              τα συζητάμε μαζί.
             </p>
 
-            <div class="contact-info">
 
-              <span>
+            <div class="contact-details">
+
+              <!-- Αντικατάστησε τα παρακάτω με τα πραγματικά στοιχεία -->
+
+              <a
+                href="mailto:hello@yourdomain.gr"
+                class="contact-detail"
+              >
                 hello@yourdomain.gr
-              </span>
+              </a>
 
-              <span>
+              <a
+                href="tel:+3069XXXXXXXX"
+                class="contact-detail"
+              >
                 +30 69X XXX XXXX
-              </span>
+              </a>
 
             </div>
 
           </div>
 
 
-          <!-- FORM -->
+          <!-- CONTACT FORM -->
 
           <form
             class="contact-form"
@@ -1209,48 +1659,41 @@
             method="POST"
           >
 
+            <div class="field">
 
-            <div class="form-row">
+              <label for="name">
+                Ονοματεπώνυμο
+              </label>
 
-
-              <div class="form-group">
-
-                <label for="name">
-                  Ονοματεπώνυμο
-                </label>
-
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Το όνομά σου"
-                  required
-                >
-
-              </div>
-
-
-              <div class="form-group">
-
-                <label for="email">
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="email@example.com"
-                  required
-                >
-
-              </div>
-
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Πώς σε λένε;"
+                required
+              />
 
             </div>
 
 
-            <div class="form-group">
+            <div class="field">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Το email σου"
+                required
+              />
+
+            </div>
+
+
+            <div class="field">
 
               <label for="company">
                 Επιχείρηση
@@ -1260,13 +1703,13 @@
                 type="text"
                 id="company"
                 name="company"
-                placeholder="Το όνομα της επιχείρησής σου"
-              >
+                placeholder="Πες μας για την επιχείρησή σου"
+              />
 
             </div>
 
 
-            <div class="form-group">
+            <div class="field">
 
               <label for="message">
                 Μήνυμα
@@ -1275,20 +1718,23 @@
               <textarea
                 id="message"
                 name="message"
-                placeholder="Πες μας λίγα πράγματα για το project σου..."
+                placeholder="Τι θα ήθελες να συζητήσουμε;"
                 required
               ></textarea>
 
             </div>
 
 
-            <button
-              type="submit"
-              class="btn btn-primary contact-submit"
-            >
-              Στείλε μήνυμα
-            </button>
+            <div class="form-submit">
 
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >
+                Στείλε μήνυμα →
+              </button>
+
+            </div>
 
           </form>
 
@@ -1299,24 +1745,34 @@
     </section>
 
 
-    <!-- =========================
-         CTA
-    ========================= -->
+    <!-- =====================================================
+         FINAL CTA
+         ===================================================== -->
 
-    <section class="cta">
+    <section class="final-cta">
 
       <div class="container">
 
-        <div class="cta-inner">
+        <div class="final-cta-inner">
 
-          <h2>
-            Έτοιμοι να κάνουμε το
-            <span>brand σου να ξεχωρίσει;</span>
-          </h2>
+          <div>
+
+            <h2>
+              Έτοιμοι να κάνουμε
+              το brand σου να
+              ξεχωρίσει;
+            </h2>
+
+            <p>
+              Το επόμενο βήμα δεν χρειάζεται
+              να είναι περίπλοκο.
+            </p>
+
+          </div>
 
           <a
             href="#contact"
-            class="btn btn-primary"
+            class="btn"
           >
             Μίλησέ μας
           </a>
@@ -1327,13 +1783,12 @@
 
     </section>
 
-
   </main>
 
 
-  <!-- =========================
+  <!-- =======================================================
        FOOTER
-  ========================= -->
+       ======================================================= -->
 
   <footer>
 
@@ -1342,15 +1797,11 @@
       <div class="footer-inner">
 
         <div class="footer-brand">
-          AGNI.EXPERT
-        </div>
-
-        <div>
-          Marketing · Strategy · Growth
-        </div>
-
-        <div>
           © 2026 Agni Expert. All rights reserved.
+        </div>
+
+        <div class="footer-tagline">
+          Marketing · Strategy · Growth
         </div>
 
       </div>
