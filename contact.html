@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Επικοινωνία | Agni Expert</title>
+
+  <meta
+    name="description"
+    content="Επικοινώνησε με την Agni Expert για να συζητήσουμε το επόμενο βήμα για το marketing της επιχείρησής σου."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --black: #0b0b0d;
+      --black-soft: #111114;
+      --white: #f6f5f2;
+      --muted: #aaa8ae;
+      --purple: #b69cff;
+      --purple-soft: #d0c2ff;
+      --line: rgba(255,255,255,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 24px 5%;
+      background: rgba(11,11,13,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: #c8c6ca;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--white);
+      color: var(--black) !important;
+      border-color: var(--white);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .contact-hero {
+      position: relative;
+      min-height: 62vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 160px 7% 85px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-soft);
+      margin-bottom: 28px;
+    }
+
+    .contact-hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(58px, 8vw, 112px);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 700;
+      max-width: 1000px;
+      margin-bottom: 32px;
+    }
+
+    .contact-hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-text {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       ABSTRACT FLOW
+    ========================= */
+
+    .hero-art {
+      position: absolute;
+      right: -12%;
+      top: 4%;
+      width: 58%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .hero-art svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .flow-main {
+      fill: none;
+      stroke: var(--purple);
+      stroke-width: 2.2;
+      opacity: 0.8;
+    }
+
+    .flow-secondary {
+      fill: none;
+      stroke: var(--purple-soft);
+      stroke-width: 1;
+      opacity: 0.28;
+    }
+
+    .flow-third {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 0.7;
+      opacity: 0.11;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================= */
+
+    .contact-section {
+      background: var(--white);
+      color: var(--black);
+      padding: 110px 7% 130px;
+    }
+
+    .contact-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 110px;
+      align-items: start;
+    }
+
+    /* =========================
+       CONTACT INFO
+    ========================= */
+
+    .contact-info-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #77747b;
+      margin-bottom: 25px;
+    }
+
+    .contact-info h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      margin-bottom: 28px;
+    }
+
+    .contact-info h2 span {
+      color: #8e6ff5;
+    }
+
+    .contact-info-text {
+      color: #68666b;
+      max-width: 430px;
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 50px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-detail-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8a878d;
+    }
+
+    .contact-detail a {
+      font-size: 16px;
+      color: var(--black);
+      transition: color 0.2s ease;
+    }
+
+    .contact-detail a:hover {
+      color: #8e6ff5;
+    }
+
+    /* =========================
+       FORM
+    ========================= */
+
+    .contact-form-wrapper {
+      background: #ffffff;
+      padding: 48px;
+      border: 1px solid rgba(11,11,13,0.12);
+    }
+
+    .form-intro {
+      margin-bottom: 38px;
+    }
+
+    .form-intro h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin-bottom: 9px;
+    }
+
+    .form-intro p {
+      color: #77747b;
+      font-size: 14px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .form-field label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #454348;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid rgba(11,11,13,0.2);
+      background: transparent;
+      padding: 12px 0;
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: #8e6ff5;
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-field select {
+      cursor: pointer;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .submit-button {
+      border: none;
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .submit-button:hover {
+      background: #8e6ff5;
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       CLOSING
+    ========================= */
+
+    .closing {
+      background: var(--black-soft);
+      padding: 115px 7%;
+      text-align: center;
+    }
+
+    .closing-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .closing-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-soft);
+      margin-bottom: 25px;
+    }
+
+    .closing h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+    }
+
+    .closing h2 span {
+      color: var(--purple);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 7%;
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #77747b;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .hero-art {
+        width: 65%;
+        right: -20%;
+        opacity: 0.55;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 70px;
+      }
+
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 20px 5%;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 9px 14px;
+      }
+
+      .contact-hero {
+        min-height: 75vh;
+        padding: 130px 6% 80px;
+      }
+
+      .contact-hero h1 {
+        font-size: clamp(50px, 14vw, 78px);
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .hero-art {
+        width: 100%;
+        right: -48%;
+        top: 12%;
+        opacity: 0.35;
+      }
+
+      .contact-section {
+        padding: 85px 6% 90px;
+      }
+
+      .contact-form-wrapper {
+        padding: 32px 25px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .closing {
+        padding: 90px 6%;
+      }
+
+      footer {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .contact-hero {
+        padding-top: 115px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+      }
+
+      .contact-info h2 {
+        font-size: 40px;
+      }
+
+      .closing h2 {
+        font-size: 40px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <nav class="nav">
+
+      <a href="index.html" class="logo">
+        AGNI.EXPERT
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="index.html">
+            Αρχική
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            Ποιοι είμαστε
+          </a>
+        </li>
+
+        <li>
+          <a href="services.html">
+            Υπηρεσίες
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="active">
+            Επικοινωνία
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="nav-cta">
+            Μίλησέ μας →
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="contact-hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Let's talk · Agni Expert
+      </div>
+
+      <h1>
+        Έχεις έναν στόχο.
+        <span>Ας βρούμε τον τρόπο.</span>
+      </h1>
+
+      <p class="hero-text">
+        Είτε έχεις ήδη μια ξεκάθαρη ιδέα είτε απλώς νιώθεις ότι
+        το marketing της επιχείρησής σου χρειάζεται μια διαφορετική
+        κατεύθυνση, ας το συζητήσουμε.
+      </p>
+
+    </div>
+
+
+    <!-- ABSTRACT FLOW -->
+
+    <div class="hero-art">
+
+      <svg
+        viewBox="0 0 900 800"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          class="flow-main"
+          d="M80 690
+             C230 590 250 470 400 385
+             C550 300 620 355 700 245
+             C765 155 790 90 870 35"
+        />
+
+        <path
+          class="flow-secondary"
+          d="M20 735
+             C190 620 250 515 425 425
+             C570 350 650 390 735 280
+             C795 200 820 125 900 70"
+        />
+
+        <path
+          class="flow-secondary"
+          d="M155 760
+             C310 650 335 545 475 470
+             C610 400 685 420 770 325
+             C830 255 850 180 900 135"
+        />
+
+        <path
+          class="flow-third"
+          d="M0 650
+             C155 535 190 405 355 315
+             C500 235 590 285 670 195
+             C730 125 770 65 850 10"
+        />
+
+      </svg>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact-section">
+
+    <div class="contact-inner">
+
+
+      <!-- CONTACT INFO -->
+
+      <div class="contact-info">
+
+        <div class="contact-info-label">
+          Get in touch
+        </div>
+
+        <h2>
+          Ας μιλήσουμε για
+          <span>την επιχείρησή σου.</span>
+        </h2>
+
+        <p class="contact-info-text">
+          Πες μας λίγα λόγια για αυτό που έχεις στο μυαλό σου,
+          τον στόχο που θέλεις να πετύχεις ή το πρόβλημα που
+          θέλεις να λύσεις. Από εκεί και πέρα, το συζητάμε μαζί.
+        </p>
+
+
+        <div class="contact-details">
+
+          <div class="contact-detail">
+
+            <span class="contact-detail-label">
+              Email
+            </span>
+
+            <a href="mailto:hello@yourdomain.gr">
+              hello@yourdomain.gr
+            </a>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <span class="contact-detail-label">
+              Τηλέφωνο
+            </span>
+
+            <a href="tel:+3069XXXXXXXX">
+              +30 69X XXX XXXX
+            </a>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <span class="contact-detail-label">
+              Social
+            </span>
+
+            <a href="#" aria-label="Instagram">
+              Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <div class="contact-form-wrapper">
+
+        <div class="form-intro">
+
+          <h3>
+            Πες μας τι χρειάζεσαι.
+          </h3>
+
+          <p>
+            Συμπλήρωσε τη φόρμα και θα επικοινωνήσουμε μαζί σου.
+          </p>
+
+        </div>
+
+
+        <form
+          class="contact-form"
+          action="#"
+          method="POST"
+        >
+
+          <div class="form-row">
+
+            <div class="form-field">
+
+              <label for="name">
+                Όνομα
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Το όνομά σου"
+                required
+              />
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="company">
+                Επιχείρηση
+              </label>
+
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Η επιχείρησή σου"
+              />
+
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-field">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                required
+              />
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="phone">
+                Τηλέφωνο
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+30"
+              />
+
+            </div>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="service">
+              Τι χρειάζεσαι;
+            </label>
+
+            <select
+              id="service"
+              name="service"
+            >
+
+              <option value="" selected disabled>
+                Επίλεξε μια υπηρεσία
+              </option>
+
+              <option value="strategy">
+                Marketing Strategy
+              </option>
+
+              <option value="campaigns">
+                Campaigns & Advertising
+              </option>
+
+              <option value="seo">
+                SEO & Content
+              </option>
+
+              <option value="social">
+                Social Media
+              </option>
+
+              <option value="content">
+                Content Creation
+              </option>
+
+              <option value="performance">
+                Performance & Analysis
+              </option>
+
+              <option value="other">
+                Κάτι άλλο
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="message">
+              Μήνυμα
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Πες μας λίγα λόγια για την επιχείρηση, τον στόχο ή αυτό που σε απασχολεί..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-submit">
+
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Αποστολή μηνύματος →
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CLOSING
+  ========================= -->
+
+  <section class="closing">
+
+    <div class="closing-inner">
+
+      <div class="closing-label">
+        One more thing
+      </div>
+
+      <h2>
+        Δεν χρειάζεται να έχεις όλες τις απαντήσεις.
+        <span>Αρκεί να ξέρεις πού θέλεις να πας.</span>
+      </h2>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        AGNI.EXPERT
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Agni Expert. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
