@@ -23,7 +23,7 @@
 
   <style>
     /* =========================================================
-       AGNI EXPERT — VISUAL REDESIGN V1
+       AGNI EXPERT
        ========================================================= */
 
     :root {
@@ -85,12 +85,6 @@
     /* =========================================================
        TYPOGRAPHY
        ========================================================= */
-
-    /*
-      Η CF Asty είναι η βασική αισθητική αναφορά των headings.
-      Μέχρι να έχουμε το actual font file, χρησιμοποιούμε
-      Manrope ως κοντινή web-safe προσέγγιση.
-    */
 
     h1,
     h2,
@@ -238,6 +232,9 @@
       z-index: 2;
 
       width: 72%;
+
+      /* Μετακινεί το hero λίγο πιο μέσα από την αριστερή πλευρά */
+      padding-left: 7%;
     }
 
     .eyebrow {
@@ -385,33 +382,6 @@
       stroke: #7c3aed;
       stroke-width: 1.2;
       opacity: 0.32;
-    }
-
-    /* =========================================================
-       SCROLL INDICATOR
-       ========================================================= */
-
-    .hero-bottom {
-      position: absolute;
-      bottom: 36px;
-      left: 0;
-      right: 0;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      color: rgba(245,243,239,0.38);
-
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .scroll-line {
-      width: 100px;
-      height: 1px;
-      background: rgba(255,255,255,0.16);
     }
 
     /* =========================================================
@@ -828,65 +798,6 @@
     }
 
     /* =========================================================
-       FINAL CTA
-       ========================================================= */
-
-    .final-cta {
-      padding: 130px 0;
-
-      background: var(--purple);
-      color: white;
-
-      overflow: hidden;
-    }
-
-    .final-cta::after {
-      content: "";
-
-      position: absolute;
-
-      width: 500px;
-      height: 500px;
-
-      right: -180px;
-      top: -180px;
-
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 50%;
-    }
-
-    .final-cta-inner {
-      position: relative;
-      z-index: 2;
-
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 50px;
-    }
-
-    .final-cta h2 {
-      max-width: 850px;
-
-      font-size: clamp(48px, 6.5vw, 86px);
-      line-height: 0.96;
-    }
-
-    .final-cta p {
-      max-width: 300px;
-
-      color: rgba(255,255,255,0.72);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .final-cta .btn {
-      background: white;
-      color: var(--black);
-      flex-shrink: 0;
-    }
-
-    /* =========================================================
        FOOTER
        ========================================================= */
 
@@ -922,8 +833,10 @@
        ========================================================= */
 
     @media (max-width: 1100px) {
+
       .hero-content {
         width: 80%;
+        padding-left: 4%;
       }
 
       .hero-visual {
@@ -943,6 +856,7 @@
     }
 
     @media (max-width: 800px) {
+
       .container {
         width: min(100% - 36px, var(--max-width));
       }
@@ -967,6 +881,7 @@
 
       .hero-content {
         width: 100%;
+        padding-left: 0;
       }
 
       .hero h1 {
@@ -987,10 +902,6 @@
         width: 560px;
         height: 600px;
         opacity: 0.5;
-      }
-
-      .hero-bottom {
-        display: none;
       }
 
       .section-padding {
@@ -1039,18 +950,6 @@
         gap: 65px;
       }
 
-      .final-cta-inner {
-        display: block;
-      }
-
-      .final-cta p {
-        margin-top: 25px;
-      }
-
-      .final-cta .btn {
-        margin-top: 30px;
-      }
-
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1059,6 +958,7 @@
     }
 
     @media (max-width: 520px) {
+
       .logo {
         font-size: 18px;
       }
@@ -1128,6 +1028,7 @@
 
   <header>
     <div class="container">
+
       <nav class="nav">
 
         <a href="#home" class="logo">
@@ -1135,10 +1036,31 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="#process">Πώς δουλεύουμε</a></li>
-          <li><a href="#services">Υπηρεσίες</a></li>
-          <li><a href="#about">Γιατί Agni</a></li>
-          <li><a href="#contact">Επικοινωνία</a></li>
+
+          <li>
+            <a href="#process">
+              Πώς δουλεύουμε
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Υπηρεσίες
+            </a>
+          </li>
+
+          <li>
+            <a href="#about">
+              Γιατί Agni
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Επικοινωνία
+            </a>
+          </li>
+
         </ul>
 
         <a href="#contact" class="nav-cta">
@@ -1146,6 +1068,7 @@
         </a>
 
       </nav>
+
     </div>
   </header>
 
@@ -1262,15 +1185,6 @@
 
       </div>
 
-
-      <div class="container">
-        <div class="hero-bottom">
-          <span>Scroll to explore</span>
-          <span class="scroll-line"></span>
-          <span>01 — 06</span>
-        </div>
-      </div>
-
     </section>
 
 
@@ -1278,19 +1192,25 @@
          PROCESS
          ===================================================== -->
 
-    <section class="section-dark section-padding process" id="process">
+    <section
+      class="section-dark section-padding process"
+      id="process"
+    >
 
       <div class="container">
 
         <div class="process-header">
 
           <div>
+
             <div class="section-label">
               How we work
             </div>
+
           </div>
 
           <div>
+
             <h2 class="section-title">
               Από τη στρατηγική<br>
               μέχρι το αποτέλεσμα.
@@ -1300,6 +1220,7 @@
               Δεν ξεκινάμε από το post. Ξεκινάμε από το
               τι θέλεις να πετύχεις και χτίζουμε από εκεί.
             </p>
+
           </div>
 
         </div>
@@ -1308,51 +1229,75 @@
         <div class="process-grid">
 
           <div class="process-item">
-            <div class="big-number">01</div>
 
-            <h3>Αναλύουμε.</h3>
+            <div class="big-number">
+              01
+            </div>
+
+            <h3>
+              Αναλύουμε.
+            </h3>
 
             <p>
               Κατανοούμε την επιχείρηση, το κοινό,
               την αγορά και τους πραγματικούς στόχους.
             </p>
+
           </div>
 
 
           <div class="process-item">
-            <div class="big-number">02</div>
 
-            <h3>Σχεδιάζουμε.</h3>
+            <div class="big-number">
+              02
+            </div>
+
+            <h3>
+              Σχεδιάζουμε.
+            </h3>
 
             <p>
               Μετατρέπουμε τα δεδομένα σε ξεκάθαρη
               marketing στρατηγική και πλάνο δράσης.
             </p>
+
           </div>
 
 
           <div class="process-item">
-            <div class="big-number">03</div>
 
-            <h3>Υλοποιούμε.</h3>
+            <div class="big-number">
+              03
+            </div>
+
+            <h3>
+              Υλοποιούμε.
+            </h3>
 
             <p>
               Από campaigns και content μέχρι SEO,
               social media και digital ενέργειες.
             </p>
+
           </div>
 
 
           <div class="process-item">
-            <div class="big-number">04</div>
 
-            <h3>Μετράμε.</h3>
+            <div class="big-number">
+              04
+            </div>
+
+            <h3>
+              Μετράμε.
+            </h3>
 
             <p>
               Παρακολουθούμε τι λειτουργεί,
               τι χρειάζεται αλλαγή και πού υπάρχει
               πραγματική ευκαιρία ανάπτυξης.
             </p>
+
           </div>
 
         </div>
@@ -1393,7 +1338,10 @@
          SERVICES
          ===================================================== -->
 
-    <section class="services-section section-padding" id="services">
+    <section
+      class="services-section section-padding"
+      id="services"
+    >
 
       <div class="container">
 
@@ -1424,68 +1372,104 @@
         <div class="services-list">
 
           <a href="#contact" class="service-row">
-            <span class="service-number">01</span>
+
+            <span class="service-number">
+              01
+            </span>
 
             <span class="service-name">
               Marketing Strategy
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
 
           <a href="#contact" class="service-row">
-            <span class="service-number">02</span>
+
+            <span class="service-number">
+              02
+            </span>
 
             <span class="service-name">
               Campaigns & Advertising
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
 
           <a href="#contact" class="service-row">
-            <span class="service-number">03</span>
+
+            <span class="service-number">
+              03
+            </span>
 
             <span class="service-name">
               SEO & Content
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
 
           <a href="#contact" class="service-row">
-            <span class="service-number">04</span>
+
+            <span class="service-number">
+              04
+            </span>
 
             <span class="service-name">
               Social Media
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
 
           <a href="#contact" class="service-row">
-            <span class="service-number">05</span>
+
+            <span class="service-number">
+              05
+            </span>
 
             <span class="service-name">
               Content Creation
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
 
           <a href="#contact" class="service-row">
-            <span class="service-number">06</span>
+
+            <span class="service-number">
+              06
+            </span>
 
             <span class="service-name">
               Performance & Analysis
             </span>
 
-            <span class="service-arrow">↗</span>
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
         </div>
@@ -1499,7 +1483,10 @@
          WHY AGNI
          ===================================================== -->
 
-    <section class="why-section section-padding" id="about">
+    <section
+      class="why-section section-padding"
+      id="about"
+    >
 
       <div class="container">
 
@@ -1530,15 +1517,21 @@
 
             <div class="why-point">
 
-              <span>01</span>
+              <span>
+                01
+              </span>
 
               <div>
-                <h3>Strategy first.</h3>
+
+                <h3>
+                  Strategy first.
+                </h3>
 
                 <p>
                   Κάθε ενέργεια ξεκινά από έναν ξεκάθαρο
                   στόχο και όχι από μια τυχαία ιδέα.
                 </p>
+
               </div>
 
             </div>
@@ -1546,15 +1539,21 @@
 
             <div class="why-point">
 
-              <span>02</span>
+              <span>
+                02
+              </span>
 
               <div>
-                <h3>Thinking + doing.</h3>
+
+                <h3>
+                  Thinking + doing.
+                </h3>
 
                 <p>
                   Δεν μένουμε στη θεωρία. Σχεδιάζουμε
                   και μετά αναλαμβάνουμε την υλοποίηση.
                 </p>
+
               </div>
 
             </div>
@@ -1562,15 +1561,21 @@
 
             <div class="why-point">
 
-              <span>03</span>
+              <span>
+                03
+              </span>
 
               <div>
-                <h3>Clear communication.</h3>
+
+                <h3>
+                  Clear communication.
+                </h3>
 
                 <p>
                   Ξέρεις τι κάνουμε, γιατί το κάνουμε
                   και τι περιμένουμε να πετύχουμε.
                 </p>
+
               </div>
 
             </div>
@@ -1578,15 +1583,21 @@
 
             <div class="why-point">
 
-              <span>04</span>
+              <span>
+                04
+              </span>
 
               <div>
-                <h3>Built around your business.</h3>
+
+                <h3>
+                  Built around your business.
+                </h3>
 
                 <p>
                   Δεν πιστεύουμε σε έτοιμες συνταγές.
                   Η στρατηγική προσαρμόζεται στην επιχείρηση.
                 </p>
+
               </div>
 
             </div>
@@ -1604,7 +1615,10 @@
          CONTACT
          ===================================================== -->
 
-    <section class="contact-section section-padding" id="contact">
+    <section
+      class="contact-section section-padding"
+      id="contact"
+    >
 
       <div class="container">
 
@@ -1737,45 +1751,6 @@
             </div>
 
           </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FINAL CTA
-         ===================================================== -->
-
-    <section class="final-cta">
-
-      <div class="container">
-
-        <div class="final-cta-inner">
-
-          <div>
-
-            <h2>
-              Έτοιμοι να κάνουμε
-              το brand σου να
-              ξεχωρίσει;
-            </h2>
-
-            <p>
-              Το επόμενο βήμα δεν χρειάζεται
-              να είναι περίπλοκο.
-            </p>
-
-          </div>
-
-          <a
-            href="#contact"
-            class="btn"
-          >
-            Μίλησέ μας
-          </a>
 
         </div>
 
