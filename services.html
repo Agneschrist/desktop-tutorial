@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Υπηρεσίες | Agni Expert</title>
+
+  <meta
+    name="description"
+    content="Οι υπηρεσίες της Agni Expert: στρατηγική marketing, campaigns, advertising, SEO, content, social media και performance."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --black: #0b0b0d;
+      --black-soft: #111114;
+      --white: #f6f5f2;
+      --muted: #aaa8ae;
+      --line: rgba(255,255,255,0.12);
+      --purple: #b69cff;
+      --purple-soft: #d0c2ff;
+      --purple-dark: #8e6ff5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 24px 5%;
+      background: rgba(11,11,13,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: #c8c6ca;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--white);
+      color: var(--black) !important;
+      border-color: var(--white);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 150px 7% 100px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 70%;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-soft);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(56px, 7vw, 104px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      font-weight: 700;
+      max-width: 950px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-text {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       ABSTRACT LINE
+    ========================= */
+
+    .hero-art {
+      position: absolute;
+      right: -8%;
+      top: 7%;
+      width: 58%;
+      height: 90%;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .hero-art svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .flow-main {
+      fill: none;
+      stroke: var(--purple);
+      stroke-width: 2.2;
+      opacity: 0.85;
+    }
+
+    .flow-secondary {
+      fill: none;
+      stroke: var(--purple-soft);
+      stroke-width: 1;
+      opacity: 0.32;
+    }
+
+    .flow-third {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 0.7;
+      opacity: 0.12;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 130px 7%;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .intro-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #77747b;
+      padding-top: 10px;
+    }
+
+    .intro h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+      max-width: 780px;
+    }
+
+    .intro h2 span {
+      color: #8e6ff5;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: var(--white);
+      color: var(--black);
+      padding: 30px 7% 140px;
+    }
+
+    .services-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid rgba(11,11,13,0.16);
+    }
+
+    .service-card {
+      position: relative;
+      padding: 48px 45px 52px 0;
+      border-bottom: 1px solid rgba(11,11,13,0.16);
+    }
+
+    .service-card:nth-child(even) {
+      padding-left: 45px;
+      border-left: 1px solid rgba(11,11,13,0.16);
+    }
+
+    .service-number {
+      font-size: 12px;
+      color: #8e6ff5;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .service-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 31px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      max-width: 500px;
+      color: #68666b;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .service-list li {
+      font-size: 12px;
+      color: #55535a;
+      border: 1px solid rgba(11,11,13,0.16);
+      padding: 7px 11px;
+      border-radius: 999px;
+    }
+
+    /* =========================
+       STRATEGY + EXECUTION
+    ========================= */
+
+    .strategy {
+      padding: 140px 7%;
+      background: var(--black-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strategy-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .strategy-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-soft);
+      padding-top: 10px;
+    }
+
+    .strategy h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      max-width: 750px;
+      margin-bottom: 34px;
+    }
+
+    .strategy h2 span {
+      color: var(--purple);
+    }
+
+    .strategy-intro {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .strategy-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .strategy-point {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .strategy-point h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .strategy-point p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 7%;
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #77747b;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .hero-content {
+        width: 80%;
+      }
+
+      .hero-art {
+        width: 65%;
+        right: -20%;
+        opacity: 0.65;
+      }
+
+      .intro-inner,
+      .strategy-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .strategy-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 20px 5%;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 9px 14px;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding: 130px 6% 80px;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 14vw, 76px);
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .hero-art {
+        width: 100%;
+        right: -45%;
+        top: 15%;
+        opacity: 0.4;
+      }
+
+      .intro,
+      .services,
+      .strategy {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .intro {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      .services {
+        padding-bottom: 90px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .service-card:nth-child(even) {
+        padding: 40px 0;
+        border-left: none;
+      }
+
+      .service-card h3 {
+        font-size: 28px;
+      }
+
+      .strategy {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      .strategy-intro {
+        font-size: 16px;
+      }
+
+      footer {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding-top: 115px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+      }
+
+      .intro h2 {
+        font-size: 40px;
+      }
+
+      .strategy h2 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+    <nav class="nav">
+
+      <a href="index.html" class="logo">
+        AGNI.EXPERT
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="index.html">
+            Αρχική
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            Ποιοι είμαστε
+          </a>
+        </li>
+
+        <li>
+          <a href="services.html" class="active">
+            Υπηρεσίες
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Επικοινωνία
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="nav-cta">
+            Μίλησέ μας →
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Services · Agni Expert
+      </div>
+
+      <h1>
+        Marketing που ξεκινά από τη
+        <span>στρατηγική.</span>
+      </h1>
+
+      <p class="hero-text">
+        Δεν προσφέρουμε απλώς μεμονωμένες υπηρεσίες marketing.
+        Βλέπουμε τη συνολική εικόνα, βρίσκουμε τι χρειάζεται το brand
+        σου και το μετατρέπουμε σε πράξη.
+      </p>
+
+    </div>
+
+
+    <!-- ABSTRACT FLOW -->
+
+    <div class="hero-art">
+
+      <svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          class="flow-main"
+          d="M110 680
+             C250 560 220 430 390 350
+             C550 275 620 330 690 230
+             C750 145 780 80 850 40"
+        />
+
+        <path
+          class="flow-secondary"
+          d="M40 720
+             C210 600 250 480 420 400
+             C570 330 640 365 720 260
+             C780 180 800 120 890 75"
+        />
+
+        <path
+          class="flow-secondary"
+          d="M180 760
+             C330 630 320 520 470 445
+             C600 380 675 395 760 300
+             C820 235 835 175 900 130"
+        />
+
+        <path
+          class="flow-third"
+          d="M20 650
+             C170 530 180 390 350 300
+             C500 220 590 270 665 180
+             C720 115 770 70 840 10"
+        />
+
+      </svg>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTRO
+  ========================= -->
+
+  <section class="intro">
+
+    <div class="intro-inner">
+
+      <div class="section-label">
+        What we do
+      </div>
+
+      <div>
+        <h2>
+          Δεν χρειάζεσαι περισσότερες υπηρεσίες.
+          <span>Χρειάζεσαι τις σωστές.</span>
+        </h2>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section class="services">
+
+    <div class="services-inner">
+
+      <div class="services-grid">
+
+        <!-- 01 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            01
+          </div>
+
+          <h3>
+            Marketing Strategy
+          </h3>
+
+          <p>
+            Ξεκινάμε από την επιχείρηση, τους στόχους και το κοινό σου.
+            Σχεδιάζουμε μια marketing στρατηγική με ξεκάθαρη κατεύθυνση
+            και συγκεκριμένες προτεραιότητες.
+          </p>
+
+          <ul class="service-list">
+            <li>Marketing Strategy</li>
+            <li>Market Analysis</li>
+            <li>Target Audience</li>
+            <li>Positioning</li>
+            <li>Marketing Plan</li>
+          </ul>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            02
+          </div>
+
+          <h3>
+            Campaigns & Advertising
+          </h3>
+
+          <p>
+            Από τη στρατηγική μέχρι την καμπάνια.
+            Δημιουργούμε και διαχειριζόμαστε advertising ενέργειες
+            με στόχο να φέρουν ουσιαστικά αποτελέσματα.
+          </p>
+
+          <ul class="service-list">
+            <li>Campaign Strategy</li>
+            <li>Meta Ads</li>
+            <li>Google Ads</li>
+            <li>Creative Direction</li>
+            <li>Media Planning</li>
+          </ul>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            03
+          </div>
+
+          <h3>
+            SEO & Content
+          </h3>
+
+          <p>
+            Κάνουμε το brand σου πιο εύκολο να βρεθεί και πιο δύσκολο
+            να ξεχαστεί. Συνδυάζουμε SEO στρατηγική με περιεχόμενο
+            που έχει λόγο ύπαρξης.
+          </p>
+
+          <ul class="service-list">
+            <li>SEO Strategy</li>
+            <li>Keyword Research</li>
+            <li>Content Strategy</li>
+            <li>On-page SEO</li>
+            <li>Content Planning</li>
+          </ul>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            04
+          </div>
+
+          <h3>
+            Social Media
+          </h3>
+
+          <p>
+            Δεν γεμίζουμε απλώς ένα content calendar.
+            Χτίζουμε παρουσία στα social media που έχει συνέπεια,
+            χαρακτήρα και σύνδεση με τους επιχειρηματικούς στόχους.
+          </p>
+
+          <ul class="service-list">
+            <li>Social Strategy</li>
+            <li>Content Planning</li>
+            <li>Community Management</li>
+            <li>Social Advertising</li>
+            <li>Reporting</li>
+          </ul>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            05
+          </div>
+
+          <h3>
+            Content Creation
+          </h3>
+
+          <p>
+            Δημιουργούμε περιεχόμενο που μεταφέρει την ταυτότητα
+            του brand σου και υπηρετεί τη στρατηγική του.
+            Από το concept μέχρι την τελική εφαρμογή.
+          </p>
+
+          <ul class="service-list">
+            <li>Creative Concepts</li>
+            <li>Social Content</li>
+            <li>Copywriting</li>
+            <li>Visual Direction</li>
+            <li>Campaign Assets</li>
+          </ul>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="service-card">
+
+          <div class="service-number">
+            06
+          </div>
+
+          <h3>
+            Performance & Analysis
+          </h3>
+
+          <p>
+            Μετράμε τι λειτουργεί, τι όχι και τι πρέπει να αλλάξει.
+            Γιατί μια στρατηγική δεν τελειώνει όταν υλοποιείται.
+            Εξελίσσεται μέσα από τα δεδομένα.
+          </p>
+
+          <ul class="service-list">
+            <li>Performance Tracking</li>
+            <li>Analytics</li>
+            <li>Reporting</li>
+            <li>Optimization</li>
+            <li>KPI Monitoring</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STRATEGY + EXECUTION
+  ========================= -->
+
+  <section class="strategy">
+
+    <div class="strategy-inner">
+
+      <div class="strategy-label">
+        Our approach
+      </div>
+
+      <div>
+
+        <h2>
+          Σκεφτόμαστε.
+          <span>Και μετά το κάνουμε.</span>
+        </h2>
+
+        <p class="strategy-intro">
+          Η Agni Expert βρίσκεται κάπου ανάμεσα στη συμβουλευτική
+          και στην υλοποίηση. Δεν σταματάμε στη στρατηγική,
+          αλλά ούτε ξεκινάμε να κάνουμε πράγματα χωρίς να ξέρουμε γιατί.
+          Πρώτα βρίσκουμε την κατεύθυνση και μετά την κάνουμε πράξη.
+        </p>
+
+        <div class="strategy-points">
+
+          <div class="strategy-point">
+
+            <h3>
+              Strategy first
+            </h3>
+
+            <p>
+              Κάθε ενέργεια ξεκινά από έναν στόχο και μια ξεκάθαρη
+              στρατηγική κατεύθυνση.
+            </p>
+
+          </div>
+
+
+          <div class="strategy-point">
+
+            <h3>
+              Execution matters
+            </h3>
+
+            <p>
+              Η σωστή στρατηγική δεν μένει σε ένα presentation.
+              Μετατρέπεται σε πραγματικές ενέργειες.
+            </p>
+
+          </div>
+
+
+          <div class="strategy-point">
+
+            <h3>
+              Built around you
+            </h3>
+
+            <p>
+              Δεν εφαρμόζουμε ένα έτοιμο πακέτο.
+              Προσαρμόζουμε τη δουλειά στις ανάγκες της επιχείρησής σου.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        AGNI.EXPERT
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Agni Expert. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
