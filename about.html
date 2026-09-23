@@ -89,11 +89,14 @@
       z-index: 20;
     }
 
+    /* ΙΔΙΟ LOGO ΜΕ ΤΗΝ HOMEPAGE */
+
     .logo {
       font-family: "Manrope", sans-serif;
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -726,12 +729,20 @@
       font-size: 13px;
     }
 
+    /* ΙΔΙΟ LOGO ΜΕ ΤΗΝ HOMEPAGE */
+
     footer .footer-logo {
       font-family: "Manrope", sans-serif;
 
-      color: var(--white);
+      font-size: 18px;
 
-      font-weight: 700;
+      font-weight: 800;
+
+      letter-spacing: -0.04em;
+
+      white-space: nowrap;
+
+      color: var(--white);
     }
 
     footer .footer-logo span {
@@ -781,6 +792,12 @@
 
         background: rgba(11, 11, 13, 0.94);
         backdrop-filter: blur(14px);
+      }
+
+      /* Το logo παραμένει 18px όπως στην homepage */
+
+      .logo {
+        font-size: 18px;
       }
 
       /* Hide desktop navigation */
@@ -950,6 +967,12 @@
         text-align: center;
       }
 
+      /* Footer logo παραμένει 18px */
+
+      footer .footer-logo {
+        font-size: 18px;
+      }
+
     }
 
   </style>
@@ -965,8 +988,10 @@
 
   <nav>
 
+    <!-- ΙΔΙΟ LOGO ΜΕ HOMEPAGE -->
+
     <a href="index.html" class="logo">
-      AGNI<span>.</span>EXPERT
+      AGNI<span>.EXPERT</span>
     </a>
 
 
@@ -1515,8 +1540,10 @@
 
   <footer>
 
+    <!-- ΙΔΙΟ LOGO ΜΕ HOMEPAGE -->
+
     <div class="footer-logo">
-      AGNI<span>.</span>EXPERT
+      AGNI<span>.EXPERT</span>
     </div>
 
     <div>
