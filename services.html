@@ -13,6 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -77,11 +78,20 @@
       justify-content: space-between;
     }
 
+    /* =========================
+       LOGO
+    ========================= */
+
     .logo {
       font-family: "Manrope", sans-serif;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--purple-soft);
     }
 
     .nav-links {
@@ -432,9 +442,14 @@
 
     .footer-logo {
       font-family: "Manrope", sans-serif;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .footer-logo span {
+      color: var(--purple-soft);
     }
 
     .footer-copy {
@@ -607,10 +622,6 @@
 
     @media (max-width: 500px) {
 
-      .logo {
-        font-size: 16px;
-      }
-
       .hero {
         padding-top: 115px;
       }
@@ -640,7 +651,7 @@
     <nav class="nav">
 
       <a href="index.html" class="logo">
-        AGNI.EXPERT
+        AGNI<span>.EXPERT</span>
       </a>
 
       <ul class="nav-links">
@@ -1096,7 +1107,7 @@
     <div class="footer-inner">
 
       <div class="footer-logo">
-        AGNI.EXPERT
+        AGNI<span>.EXPERT</span>
       </div>
 
       <div class="footer-copy">
