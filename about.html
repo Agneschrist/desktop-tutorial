@@ -28,19 +28,14 @@
     :root {
       --black: #0b0b0d;
       --black-soft: #111114;
-
       --white: #f7f5f1;
-
       --muted: #a8a5ad;
-
       --purple: #8b5cf6;
       --purple-light: #c4b5fd;
       --purple-dark: #6d28d9;
-
       --border: rgba(255,255,255,0.10);
       --border-light: rgba(10,10,12,0.12);
     }
-
 
     /* =========================================================
        RESET
@@ -59,9 +54,7 @@
     body {
       background: var(--black);
       color: var(--white);
-
       font-family: "DM Sans", sans-serif;
-
       overflow-x: hidden;
       line-height: 1.6;
     }
@@ -76,17 +69,14 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-
     /* =========================================================
        NAVIGATION
        ========================================================= */
 
     nav {
       position: absolute;
-
       top: 0;
       left: 0;
-
       width: 100%;
       height: 100px;
 
@@ -101,10 +91,8 @@
 
     .logo {
       font-family: "Manrope", sans-serif;
-
       font-size: 22px;
       font-weight: 800;
-
       letter-spacing: -0.8px;
     }
 
@@ -112,12 +100,12 @@
       color: var(--purple-light);
     }
 
+    /* Desktop menu */
+
     .nav-links {
       display: flex;
       align-items: center;
-
       gap: 38px;
-
       font-size: 14px;
       color: #d7d4da;
     }
@@ -132,9 +120,7 @@
 
     .nav-contact {
       border: 1px solid rgba(196,181,253,0.5);
-
       padding: 12px 20px;
-
       border-radius: 999px;
 
       transition:
@@ -148,10 +134,34 @@
       background: var(--purple-light);
       color: var(--black);
       border-color: var(--purple-light);
-
       transform: translateY(-1px);
     }
 
+    /* Mobile burger */
+
+    .menu-toggle {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+      background: transparent;
+
+      color: var(--white);
+
+      cursor: pointer;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
 
     /* =========================================================
        HERO
@@ -159,7 +169,6 @@
 
     .about-hero {
       min-height: 88vh;
-
       position: relative;
 
       display: flex;
@@ -185,9 +194,7 @@
       gap: 10px;
 
       font-size: 12px;
-
       text-transform: uppercase;
-
       letter-spacing: 2.5px;
 
       color: var(--purple-light);
@@ -235,7 +242,6 @@
 
       color: #b8b5bd;
     }
-
 
     /* =========================================================
        ABSTRACT FLOW
@@ -295,7 +301,6 @@
       stroke-width: 0.7;
       opacity: 0.22;
     }
-
 
     /* =========================================================
        INTRO
@@ -368,7 +373,6 @@
     .intro-text + .intro-text {
       margin-top: 20px;
     }
-
 
     /* =========================================================
        PHILOSOPHY
@@ -451,7 +455,6 @@
 
       max-width: 570px;
     }
-
 
     /* =========================================================
        STRATEGY + EXECUTION
@@ -551,7 +554,6 @@
       font-size: 16px;
     }
 
-
     /* =========================================================
        VALUES
        ========================================================= */
@@ -632,7 +634,6 @@
       max-width: 500px;
     }
 
-
     /* =========================================================
        CTA
        ========================================================= */
@@ -706,7 +707,6 @@
       transform: translateY(-2px);
     }
 
-
     /* =========================================================
        FOOTER
        ========================================================= */
@@ -737,7 +737,6 @@
     footer .footer-logo span {
       color: var(--purple-light);
     }
-
 
     /* =========================================================
        RESPONSIVE
@@ -778,20 +777,72 @@
 
       nav {
         height: 80px;
-
         padding: 0 6vw;
+
+        background: rgba(11, 11, 13, 0.94);
+        backdrop-filter: blur(14px);
       }
+
+      /* Hide desktop navigation */
 
       .nav-links {
         display: none;
       }
 
-      .nav-contact {
-        display: inline-flex;
+      /* Show burger */
 
-        padding: 10px 16px;
+      .menu-toggle {
+        display: flex;
+      }
 
-        font-size: 12px;
+      /* Mobile dropdown */
+
+      .mobile-menu {
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(11, 11, 13, 0.98);
+
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        padding: 10px 6vw 25px;
+
+        z-index: 30;
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: block;
+
+        padding: 18px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        font-family: "Manrope", sans-serif;
+
+        font-size: 20px;
+
+        letter-spacing: -0.3px;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--purple-light);
+      }
+
+      .mobile-menu .mobile-cta {
+        color: var(--purple-light);
+
+        border-bottom: 0;
+
+        padding-top: 24px;
       }
 
       .about-hero {
@@ -918,6 +969,9 @@
       agni<span>.</span>expert
     </a>
 
+
+    <!-- DESKTOP MENU -->
+
     <div class="nav-links">
 
       <a href="index.html">
@@ -934,6 +988,46 @@
 
       <a href="contact.html" class="nav-contact">
         Επικοινωνία
+      </a>
+
+    </div>
+
+
+    <!-- MOBILE BURGER -->
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      type="button"
+    >
+      ☰
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="index.html">
+        Αρχική
+      </a>
+
+      <a href="about.html">
+        Ποιοι είμαστε
+      </a>
+
+      <a href="services.html">
+        Υπηρεσίες
+      </a>
+
+      <a href="contact.html">
+        Επικοινωνία
+      </a>
+
+      <a href="contact.html" class="mobile-cta">
+        Μίλησέ μας →
       </a>
 
     </div>
@@ -1430,6 +1524,83 @@
     </div>
 
   </footer>
+
+
+  <!-- =======================================================
+       MOBILE MENU SCRIPT
+       ======================================================= -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = mobileMenu.classList.toggle("open");
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"
+      );
+
+    });
+
+
+    /* Κλείσιμο όταν πατάμε κάποιο link */
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        mobileMenu.classList.remove("open");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "Άνοιγμα μενού"
+        );
+
+      });
+
+    });
+
+
+    /* Κλείσιμο αν επιστρέψουμε σε desktop */
+
+    window.addEventListener("resize", function() {
+
+      if (window.innerWidth > 700) {
+
+        mobileMenu.classList.remove("open");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+  </script>
 
 
 </body>
