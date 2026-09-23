@@ -78,10 +78,6 @@
       justify-content: space-between;
     }
 
-    /* =========================
-       LOGO
-    ========================= */
-
     .logo {
       font-family: "Manrope", sans-serif;
       font-size: 18px;
@@ -91,7 +87,7 @@
     }
 
     .logo span {
-      color: var(--purple-soft);
+      color: #c4b5fd;
     }
 
     .nav-links {
@@ -125,7 +121,9 @@
       border-color: var(--white);
     }
 
-    /* MOBILE MENU */
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
     .menu-toggle {
       display: none;
@@ -449,7 +447,7 @@
     }
 
     .footer-logo span {
-      color: var(--purple-soft);
+      color: #c4b5fd;
     }
 
     .footer-copy {
@@ -493,8 +491,6 @@
       header {
         padding: 20px 5%;
       }
-
-      /* MOBILE BURGER */
 
       .nav-links {
         display: none;
@@ -648,6 +644,7 @@
   ========================= -->
 
   <header>
+
     <nav class="nav">
 
       <a href="index.html" class="logo">
@@ -688,8 +685,6 @@
 
       </ul>
 
-      <!-- MOBILE BURGER -->
-
       <button
         class="menu-toggle"
         id="menuToggle"
@@ -701,8 +696,6 @@
       </button>
 
     </nav>
-
-    <!-- MOBILE MENU -->
 
     <div class="mobile-menu" id="mobileMenu">
 
@@ -755,9 +748,6 @@
       </p>
 
     </div>
-
-
-    <!-- ABSTRACT FLOW -->
 
     <div class="hero-art">
 
@@ -838,8 +828,6 @@
 
       <div class="services-grid">
 
-        <!-- 01 -->
-
         <article class="service-card">
 
           <div class="service-number">
@@ -868,8 +856,6 @@
         </article>
 
 
-        <!-- 02 -->
-
         <article class="service-card">
 
           <div class="service-number">
@@ -896,8 +882,6 @@
 
         </article>
 
-
-        <!-- 03 -->
 
         <article class="service-card">
 
@@ -926,8 +910,6 @@
         </article>
 
 
-        <!-- 04 -->
-
         <article class="service-card">
 
           <div class="service-number">
@@ -955,8 +937,6 @@
         </article>
 
 
-        <!-- 05 -->
-
         <article class="service-card">
 
           <div class="service-number">
@@ -983,8 +963,6 @@
 
         </article>
 
-
-        <!-- 06 -->
 
         <article class="service-card">
 
@@ -1124,10 +1102,12 @@
   ========================= -->
 
   <script>
+
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
 
     menuToggle.addEventListener("click", function () {
+
       const isOpen = mobileMenu.classList.toggle("open");
 
       menuToggle.textContent = isOpen ? "×" : "☰";
@@ -1141,12 +1121,16 @@
         "aria-label",
         isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"
       );
+
     });
+
 
     const mobileLinks = mobileMenu.querySelectorAll("a");
 
     mobileLinks.forEach(function(link) {
+
       link.addEventListener("click", function() {
+
         mobileMenu.classList.remove("open");
 
         menuToggle.textContent = "☰";
@@ -1160,11 +1144,16 @@
           "aria-label",
           "Άνοιγμα μενού"
         );
+
       });
+
     });
 
+
     window.addEventListener("resize", function() {
+
       if (window.innerWidth > 800) {
+
         mobileMenu.classList.remove("open");
 
         menuToggle.textContent = "☰";
@@ -1173,8 +1162,11 @@
           "aria-expanded",
           "false"
         );
+
       }
+
     });
+
   </script>
 
 </body>
