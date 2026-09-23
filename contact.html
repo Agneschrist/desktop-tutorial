@@ -79,9 +79,14 @@
 
     .logo {
       font-family: "Manrope", sans-serif;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--purple-soft);
     }
 
     .nav-links {
@@ -247,10 +252,6 @@
       gap: 110px;
       align-items: start;
     }
-
-    /* =========================
-       CONTACT INFO
-    ========================= */
 
     .contact-info-label {
       font-size: 12px;
@@ -465,9 +466,14 @@
 
     .footer-logo {
       font-family: "Manrope", sans-serif;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .footer-logo span {
+      color: var(--purple-soft);
     }
 
     .footer-copy {
@@ -495,7 +501,6 @@
         grid-template-columns: 1fr;
         gap: 70px;
       }
-
     }
 
     @media (max-width: 800px) {
@@ -503,8 +508,6 @@
       header {
         padding: 20px 5%;
       }
-
-      /* MOBILE BURGER */
 
       .nav-links {
         display: none;
@@ -601,14 +604,9 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
     }
 
     @media (max-width: 500px) {
-
-      .logo {
-        font-size: 16px;
-      }
 
       .contact-hero {
         padding-top: 115px;
@@ -625,60 +623,43 @@
       .closing h2 {
         font-size: 40px;
       }
-
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
-
   <header>
 
     <nav class="nav">
 
       <a href="index.html" class="logo">
-        AGNI.EXPERT
+        AGNI<span>.EXPERT</span>
       </a>
 
       <ul class="nav-links">
 
         <li>
-          <a href="index.html">
-            Αρχική
-          </a>
+          <a href="index.html">Αρχική</a>
         </li>
 
         <li>
-          <a href="about.html">
-            Ποιοι είμαστε
-          </a>
+          <a href="about.html">Ποιοι είμαστε</a>
         </li>
 
         <li>
-          <a href="services.html">
-            Υπηρεσίες
-          </a>
+          <a href="services.html">Υπηρεσίες</a>
         </li>
 
         <li>
-          <a href="contact.html" class="active">
-            Επικοινωνία
-          </a>
+          <a href="contact.html" class="active">Επικοινωνία</a>
         </li>
 
         <li>
-          <a href="contact.html" class="nav-cta">
-            Μίλησέ μας →
-          </a>
+          <a href="contact.html" class="nav-cta">Μίλησέ μας →</a>
         </li>
 
       </ul>
-
-      <!-- MOBILE BURGER -->
 
       <button
         class="menu-toggle"
@@ -692,38 +673,22 @@
 
     </nav>
 
-    <!-- MOBILE MENU -->
-
     <div class="mobile-menu" id="mobileMenu">
 
-      <a href="index.html">
-        Αρχική
-      </a>
+      <a href="index.html">Αρχική</a>
 
-      <a href="about.html">
-        Ποιοι είμαστε
-      </a>
+      <a href="about.html">Ποιοι είμαστε</a>
 
-      <a href="services.html">
-        Υπηρεσίες
-      </a>
+      <a href="services.html">Υπηρεσίες</a>
 
-      <a href="contact.html" class="active">
-        Επικοινωνία
-      </a>
+      <a href="contact.html" class="active">Επικοινωνία</a>
 
-      <a href="contact.html" class="mobile-cta">
-        Μίλησέ μας →
-      </a>
+      <a href="contact.html" class="mobile-cta">Μίλησέ μας →</a>
 
     </div>
 
   </header>
 
-
-  <!-- =========================
-       HERO
-  ========================= -->
 
   <section class="contact-hero">
 
@@ -746,15 +711,9 @@
 
     </div>
 
-
-    <!-- ABSTRACT FLOW -->
-
     <div class="hero-art">
 
-      <svg
-        viewBox="0 0 900 800"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
 
         <path
           class="flow-main"
@@ -795,16 +754,9 @@
   </section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
   <section class="contact-section">
 
     <div class="contact-inner">
-
-
-      <!-- CONTACT INFO -->
 
       <div class="contact-info">
 
@@ -823,53 +775,36 @@
           θέλεις να λύσεις. Από εκεί και πέρα, το συζητάμε μαζί.
         </p>
 
-
         <div class="contact-details">
 
           <div class="contact-detail">
-
-            <span class="contact-detail-label">
-              Email
-            </span>
+            <span class="contact-detail-label">Email</span>
 
             <a href="mailto:hello@yourdomain.gr">
               hello@yourdomain.gr
             </a>
-
           </div>
 
-
           <div class="contact-detail">
-
-            <span class="contact-detail-label">
-              Τηλέφωνο
-            </span>
+            <span class="contact-detail-label">Τηλέφωνο</span>
 
             <a href="tel:+3069XXXXXXXX">
               +30 69X XXX XXXX
             </a>
-
           </div>
 
-
           <div class="contact-detail">
-
-            <span class="contact-detail-label">
-              Social
-            </span>
+            <span class="contact-detail-label">Social</span>
 
             <a href="#" aria-label="Instagram">
               Instagram
             </a>
-
           </div>
 
         </div>
 
       </div>
 
-
-      <!-- FORM -->
 
       <div class="contact-form-wrapper">
 
@@ -885,7 +820,6 @@
 
         </div>
 
-
         <form
           class="contact-form"
           action="#"
@@ -896,9 +830,7 @@
 
             <div class="form-field">
 
-              <label for="name">
-                Όνομα
-              </label>
+              <label for="name">Όνομα</label>
 
               <input
                 type="text"
@@ -910,12 +842,9 @@
 
             </div>
 
-
             <div class="form-field">
 
-              <label for="company">
-                Επιχείρηση
-              </label>
+              <label for="company">Επιχείρηση</label>
 
               <input
                 type="text"
@@ -933,9 +862,7 @@
 
             <div class="form-field">
 
-              <label for="email">
-                Email
-              </label>
+              <label for="email">Email</label>
 
               <input
                 type="email"
@@ -947,12 +874,9 @@
 
             </div>
 
-
             <div class="form-field">
 
-              <label for="phone">
-                Τηλέφωνο
-              </label>
+              <label for="phone">Τηλέφωνο</label>
 
               <input
                 type="tel"
@@ -972,10 +896,7 @@
               Τι χρειάζεσαι;
             </label>
 
-            <select
-              id="service"
-              name="service"
-            >
+            <select id="service" name="service">
 
               <option value="" selected disabled>
                 Επίλεξε μια υπηρεσία
@@ -1016,9 +937,7 @@
 
           <div class="form-field">
 
-            <label for="message">
-              Μήνυμα
-            </label>
+            <label for="message">Μήνυμα</label>
 
             <textarea
               id="message"
@@ -1050,10 +969,6 @@
   </section>
 
 
-  <!-- =========================
-       CLOSING
-  ========================= -->
-
   <section class="closing">
 
     <div class="closing-inner">
@@ -1072,16 +987,12 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
   <footer>
 
     <div class="footer-inner">
 
       <div class="footer-logo">
-        AGNI.EXPERT
+        AGNI<span>.EXPERT</span>
       </div>
 
       <div class="footer-copy">
@@ -1093,15 +1004,12 @@
   </footer>
 
 
-  <!-- =========================
-       MOBILE MENU SCRIPT
-  ========================= -->
-
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
 
     menuToggle.addEventListener("click", function () {
+
       const isOpen = mobileMenu.classList.toggle("open");
 
       menuToggle.textContent = isOpen ? "×" : "☰";
@@ -1115,12 +1023,15 @@
         "aria-label",
         isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"
       );
+
     });
 
     const mobileLinks = mobileMenu.querySelectorAll("a");
 
     mobileLinks.forEach(function(link) {
+
       link.addEventListener("click", function() {
+
         mobileMenu.classList.remove("open");
 
         menuToggle.textContent = "☰";
@@ -1134,11 +1045,15 @@
           "aria-label",
           "Άνοιγμα μενού"
         );
+
       });
+
     });
 
     window.addEventListener("resize", function() {
+
       if (window.innerWidth > 800) {
+
         mobileMenu.classList.remove("open");
 
         menuToggle.textContent = "☰";
@@ -1147,7 +1062,9 @@
           "aria-expanded",
           "false"
         );
+
       }
+
     });
   </script>
 
