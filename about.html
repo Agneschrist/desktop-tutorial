@@ -5,23 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ποιοι είμαστε | Agni Expert</title>
-  <meta name="description" content="Γνωρίστε το Agni Expert. Στρατηγική, δημιουργικό και υλοποίηση για επιχειρήσεις που θέλουν το marketing τους να έχει κατεύθυνση και ουσιαστικό αποτέλεσμα.">
+
+  <meta
+    name="description"
+    content="Γνωρίστε το Agni Expert. Strategic marketing partner για επιχειρήσεις που θέλουν ξεκάθαρη κατεύθυνση, σωστή στρατηγική και ουσιαστική υλοποίηση."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================================================
+       AGNI EXPERT — ABOUT
+       ========================================================= */
+
     :root {
       --black: #0b0b0d;
       --black-soft: #111114;
+
       --white: #f7f5f1;
+
       --muted: #a8a5ad;
+
       --purple: #8b5cf6;
       --purple-light: #c4b5fd;
       --purple-dark: #6d28d9;
+
       --border: rgba(255,255,255,0.10);
+      --border-light: rgba(10,10,12,0.12);
     }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
 
     * {
       margin: 0;
@@ -36,8 +59,11 @@
     body {
       background: var(--black);
       color: var(--white);
+
       font-family: "DM Sans", sans-serif;
+
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     a {
@@ -50,27 +76,35 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* =========================
+
+    /* =========================================================
        NAVIGATION
-    ========================= */
+       ========================================================= */
 
     nav {
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 100%;
       height: 100px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 6vw;
+
       z-index: 20;
     }
 
     .logo {
       font-family: "Manrope", sans-serif;
+
       font-size: 22px;
       font-weight: 800;
+
       letter-spacing: -0.8px;
     }
 
@@ -81,7 +115,9 @@
     .nav-links {
       display: flex;
       align-items: center;
+
       gap: 38px;
+
       font-size: 14px;
       color: #d7d4da;
     }
@@ -96,52 +132,91 @@
 
     .nav-contact {
       border: 1px solid rgba(196,181,253,0.5);
+
       padding: 12px 20px;
+
       border-radius: 999px;
-      transition: all 0.25s ease;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
     }
 
     .nav-contact:hover {
       background: var(--purple-light);
       color: var(--black);
       border-color: var(--purple-light);
+
+      transform: translateY(-1px);
     }
 
-    /* =========================
+
+    /* =========================================================
        HERO
-    ========================= */
+       ========================================================= */
 
     .about-hero {
       min-height: 88vh;
+
       position: relative;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
+
       border-bottom: 1px solid var(--border);
     }
 
     .hero-inner {
       width: 100%;
+
       padding: 150px 7vw 100px;
+
       position: relative;
       z-index: 3;
     }
 
     .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 2.5px;
+
       color: var(--purple-light);
+
       margin-bottom: 28px;
+
       font-weight: 600;
     }
 
+    .eyebrow::before {
+      content: "";
+
+      width: 28px;
+      height: 1px;
+
+      background: var(--purple-light);
+    }
+
     .hero-title {
-      max-width: 850px;
+      max-width: 900px;
+
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(52px, 7vw, 105px);
+
       line-height: 0.98;
+
       letter-spacing: -5px;
+
       font-weight: 700;
     }
 
@@ -151,98 +226,126 @@
 
     .hero-description {
       max-width: 650px;
+
       margin-top: 38px;
+
       font-size: 19px;
+
       line-height: 1.65;
+
       color: #b8b5bd;
     }
 
-    /* =========================
+
+    /* =========================================================
        ABSTRACT FLOW
-    ========================= */
+       ========================================================= */
 
     .hero-art {
       position: absolute;
+
       right: -2%;
       top: 50%;
+
       transform: translateY(-50%);
+
       width: min(48vw, 680px);
       height: 620px;
+
       z-index: 1;
+
       pointer-events: none;
+
       opacity: 0.95;
     }
 
     .flow {
       width: 100%;
       height: 100%;
+
       overflow: visible;
     }
 
-    .flow-main {
+    .flow-main,
+    .flow-secondary,
+    .flow-third,
+    .flow-fourth {
       fill: none;
+
       stroke: url(#purpleGradient);
-      stroke-width: 2.4;
+
       stroke-linecap: round;
     }
 
+    .flow-main {
+      stroke-width: 2.4;
+    }
+
     .flow-secondary {
-      fill: none;
-      stroke: url(#purpleGradient);
       stroke-width: 1.2;
-      stroke-linecap: round;
       opacity: 0.55;
     }
 
     .flow-third {
-      fill: none;
-      stroke: url(#purpleGradient);
       stroke-width: 0.9;
-      stroke-linecap: round;
       opacity: 0.35;
     }
 
     .flow-fourth {
-      fill: none;
-      stroke: url(#purpleGradient);
       stroke-width: 0.7;
-      stroke-linecap: round;
       opacity: 0.22;
     }
 
-    /* =========================
+
+    /* =========================================================
        INTRO
-    ========================= */
+       ========================================================= */
 
     .intro {
       padding: 150px 7vw;
+
       background: var(--white);
+
       color: var(--black);
     }
 
     .intro-grid {
       display: grid;
+
       grid-template-columns: 0.8fr 1.4fr;
+
       gap: 10vw;
+
       align-items: start;
+
       max-width: 1300px;
+
       margin: 0 auto;
     }
 
     .section-label {
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 2.4px;
+
       color: #756f7b;
+
       font-weight: 600;
     }
 
     .intro h2 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(38px, 5vw, 68px);
+
       line-height: 1.05;
+
       letter-spacing: -3px;
+
       font-weight: 700;
+
       max-width: 850px;
     }
 
@@ -252,9 +355,13 @@
 
     .intro-text {
       margin-top: 34px;
+
       max-width: 760px;
+
       font-size: 18px;
+
       line-height: 1.8;
+
       color: #59565d;
     }
 
@@ -262,25 +369,32 @@
       margin-top: 20px;
     }
 
-    /* =========================
+
+    /* =========================================================
        PHILOSOPHY
-    ========================= */
+       ========================================================= */
 
     .philosophy {
       padding: 150px 7vw;
+
       background: var(--black-soft);
     }
 
     .philosophy-header {
       max-width: 900px;
+
       margin-bottom: 90px;
     }
 
     .philosophy-header h2 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(42px, 5vw, 72px);
+
       line-height: 1.02;
+
       letter-spacing: -3px;
+
       margin-top: 24px;
     }
 
@@ -290,62 +404,88 @@
 
     .steps {
       max-width: 1250px;
+
       margin: 0 auto;
+
       border-top: 1px solid var(--border);
     }
 
     .step {
       display: grid;
+
       grid-template-columns: 100px 1fr 1.5fr;
+
       gap: 50px;
+
       padding: 42px 0;
+
       border-bottom: 1px solid var(--border);
+
       align-items: start;
     }
 
     .step-number {
       font-size: 13px;
+
       color: var(--purple-light);
+
       letter-spacing: 1px;
+
       padding-top: 7px;
     }
 
     .step h3 {
       font-family: "Manrope", sans-serif;
+
       font-size: 30px;
+
       letter-spacing: -1px;
     }
 
     .step p {
       color: #aaa7ae;
+
       font-size: 16px;
+
       line-height: 1.7;
+
       max-width: 570px;
     }
 
-    /* =========================
-       NO THEORY
-    ========================= */
+
+    /* =========================================================
+       STRATEGY + EXECUTION
+       ========================================================= */
 
     .execution {
       padding: 150px 7vw;
+
       background: var(--white);
+
       color: var(--black);
     }
 
     .execution-grid {
       max-width: 1250px;
+
       margin: 0 auto;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 10vw;
+
       align-items: center;
     }
 
     .execution h2 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(42px, 5vw, 72px);
+
       line-height: 1.03;
+
       letter-spacing: -3px;
     }
 
@@ -355,26 +495,37 @@
 
     .execution-copy p {
       font-size: 18px;
+
       line-height: 1.8;
+
       color: #5c5960;
+
       margin-top: 30px;
+
       max-width: 650px;
     }
 
     .execution-card {
       border: 1px solid #dedbe0;
+
       padding: 55px;
+
       position: relative;
+
       background: #faf9f7;
     }
 
     .execution-card::before {
       content: "";
+
       position: absolute;
+
       left: 0;
       top: 0;
+
       width: 5px;
       height: 100%;
+
       background: linear-gradient(
         to bottom,
         var(--purple-dark),
@@ -384,92 +535,129 @@
 
     .execution-card h3 {
       font-family: "Manrope", sans-serif;
+
       font-size: 30px;
+
       letter-spacing: -1px;
+
       margin-bottom: 20px;
     }
 
     .execution-card p {
       color: #626067;
+
       line-height: 1.75;
+
       font-size: 16px;
     }
 
-    /* =========================
+
+    /* =========================================================
        VALUES
-    ========================= */
+       ========================================================= */
 
     .values {
       padding: 150px 7vw;
+
       background: var(--black);
     }
 
     .values-header {
       max-width: 750px;
+
       margin-bottom: 80px;
     }
 
     .values-header h2 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(42px, 5vw, 70px);
+
       line-height: 1.03;
+
       letter-spacing: -3px;
+
       margin-top: 24px;
     }
 
     .values-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 1px;
+
       background: var(--border);
+
       max-width: 1250px;
+
       margin: 0 auto;
     }
 
     .value {
       background: var(--black);
+
       padding: 48px;
+
       min-height: 240px;
     }
 
     .value-number {
       font-size: 12px;
+
       color: var(--purple-light);
+
       letter-spacing: 1.5px;
+
       margin-bottom: 45px;
     }
 
     .value h3 {
       font-family: "Manrope", sans-serif;
+
       font-size: 25px;
+
       margin-bottom: 14px;
+
       letter-spacing: -0.7px;
     }
 
     .value p {
       color: #9e9ba3;
+
       line-height: 1.7;
+
       font-size: 15px;
+
       max-width: 500px;
     }
 
-    /* =========================
+
+    /* =========================================================
        CTA
-    ========================= */
+       ========================================================= */
 
     .about-cta {
       padding: 140px 7vw;
+
       background: var(--black-soft);
+
       border-top: 1px solid var(--border);
+
       text-align: center;
     }
 
     .about-cta h2 {
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(45px, 6vw, 85px);
+
       line-height: 1;
+
       letter-spacing: -4px;
+
       max-width: 900px;
+
       margin: 0 auto;
     }
 
@@ -479,47 +667,70 @@
 
     .about-cta p {
       max-width: 600px;
+
       margin: 30px auto 38px;
+
       color: #aaa7ae;
+
       font-size: 17px;
+
       line-height: 1.7;
     }
 
     .cta-button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       padding: 15px 28px;
+
       border-radius: 999px;
+
       background: var(--purple-light);
+
       color: var(--black);
+
       font-weight: 600;
+
       font-size: 14px;
-      transition: all 0.25s ease;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
     }
 
     .cta-button:hover {
       background: white;
+
       transform: translateY(-2px);
     }
 
-    /* =========================
+
+    /* =========================================================
        FOOTER
-    ========================= */
+       ========================================================= */
 
     footer {
       padding: 35px 7vw;
+
       display: flex;
+
       align-items: center;
       justify-content: space-between;
+
       border-top: 1px solid var(--border);
+
       color: #85828a;
+
       font-size: 13px;
     }
 
     footer .footer-logo {
       font-family: "Manrope", sans-serif;
+
       color: var(--white);
+
       font-weight: 700;
     }
 
@@ -527,9 +738,10 @@
       color: var(--purple-light);
     }
 
-    /* =========================
+
+    /* =========================================================
        RESPONSIVE
-    ========================= */
+       ========================================================= */
 
     @media (max-width: 1000px) {
 
@@ -545,23 +757,28 @@
       .intro-grid,
       .execution-grid {
         grid-template-columns: 1fr;
+
         gap: 60px;
       }
 
       .step {
         grid-template-columns: 70px 1fr;
+
         gap: 25px;
       }
 
       .step p {
         grid-column: 2;
       }
+
     }
+
 
     @media (max-width: 700px) {
 
       nav {
         height: 80px;
+
         padding: 0 6vw;
       }
 
@@ -571,7 +788,9 @@
 
       .nav-contact {
         display: inline-flex;
+
         padding: 10px 16px;
+
         font-size: 12px;
       }
 
@@ -585,20 +804,27 @@
 
       .hero-title {
         font-size: clamp(48px, 14vw, 75px);
+
         letter-spacing: -3px;
       }
 
       .hero-description {
         font-size: 16px;
+
         margin-top: 28px;
+
         max-width: 95%;
       }
 
       .hero-art {
         width: 650px;
+
         height: 600px;
+
         right: -65%;
+
         top: 55%;
+
         opacity: 0.35;
       }
 
@@ -619,12 +845,15 @@
 
       .intro-text {
         font-size: 16px;
+
         line-height: 1.75;
       }
 
       .step {
         grid-template-columns: 50px 1fr;
+
         gap: 18px;
+
         padding: 32px 0;
       }
 
@@ -634,6 +863,7 @@
 
       .step p {
         grid-column: 2;
+
         font-size: 15px;
       }
 
@@ -647,6 +877,7 @@
 
       .value {
         padding: 35px 30px;
+
         min-height: auto;
       }
 
@@ -660,37 +891,59 @@
 
       footer {
         padding: 28px 6vw;
+
         flex-direction: column;
+
         gap: 12px;
+
         text-align: center;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- =======================================================
        NAVIGATION
-  ========================= -->
+       ======================================================= -->
 
   <nav>
+
     <a href="index.html" class="logo">
       agni<span>.</span>expert
     </a>
 
     <div class="nav-links">
-      <a href="index.html">Αρχική</a>
-      <a href="about.html">Ποιοι είμαστε</a>
-      <a href="services.html">Υπηρεσίες</a>
-      <a href="contact.html" class="nav-contact">Επικοινωνία</a>
+
+      <a href="index.html">
+        Αρχική
+      </a>
+
+      <a href="about.html">
+        Ποιοι είμαστε
+      </a>
+
+      <a href="services.html">
+        Υπηρεσίες
+      </a>
+
+      <a href="contact.html" class="nav-contact">
+        Επικοινωνία
+      </a>
+
     </div>
+
   </nav>
 
 
-  <!-- =========================
+  <!-- =======================================================
        HERO
-  ========================= -->
+       ======================================================= -->
 
   <section class="about-hero">
 
@@ -701,50 +954,103 @@
       </div>
 
       <h1 class="hero-title">
-        Το marketing δεν ξεκινά από το <span class="accent">τι θα κάνεις.</span>
+        Το marketing δεν ξεκινά από το
+        <span class="accent">τι θα κάνεις.</span>
         Ξεκινά από το γιατί.
       </h1>
 
       <p class="hero-description">
-        Στο Agni Expert πιστεύουμε ότι το καλό marketing δεν είναι μια σειρά
-        από αποσπασματικές ενέργειες. Είναι στρατηγική, δημιουργικό και
-        υλοποίηση που δουλεύουν μαζί για έναν ξεκάθαρο στόχο.
+        Στο Agni Expert πιστεύουμε ότι το καλό marketing δεν είναι
+        μια σειρά από αποσπασματικές ενέργειες. Είναι στρατηγική,
+        δημιουργικό και υλοποίηση που δουλεύουν μαζί για έναν
+        ξεκάθαρο στόχο.
       </p>
 
     </div>
 
 
+    <!-- ABSTRACT FLOW -->
+
     <div class="hero-art">
 
-      <svg class="flow" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        class="flow"
+        viewBox="0 0 680 600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
 
         <defs>
-          <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#6d28d9"/>
-            <stop offset="45%" stop-color="#8b5cf6"/>
-            <stop offset="75%" stop-color="#c4b5fd"/>
-            <stop offset="100%" stop-color="#7c3aed"/>
+
+          <linearGradient
+            id="purpleGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+
+            <stop
+              offset="0%"
+              stop-color="#6d28d9"
+            />
+
+            <stop
+              offset="45%"
+              stop-color="#8b5cf6"
+            />
+
+            <stop
+              offset="75%"
+              stop-color="#c4b5fd"
+            />
+
+            <stop
+              offset="100%"
+              stop-color="#7c3aed"
+            />
+
           </linearGradient>
+
         </defs>
+
 
         <path
           class="flow-main"
-          d="M680 35 C590 55, 525 105, 485 180 C445 255, 455 325, 385 365 C315 405, 190 365, 145 425 C95 490, 135 555, 30 595"
+          d="M680 35
+             C590 55, 525 105, 485 180
+             C445 255, 455 325, 385 365
+             C315 405, 190 365, 145 425
+             C95 490, 135 555, 30 595"
         />
+
 
         <path
           class="flow-secondary"
-          d="M680 105 C575 110, 535 155, 505 220 C470 295, 470 350, 395 395 C320 440, 205 415, 160 470 C120 520, 130 565, 55 600"
+          d="M680 105
+             C575 110, 535 155, 505 220
+             C470 295, 470 350, 395 395
+             C320 440, 205 415, 160 470
+             C120 520, 130 565, 55 600"
         />
+
 
         <path
           class="flow-third"
-          d="M680 -15 C600 5, 550 70, 525 145 C495 235, 520 300, 440 345 C360 390, 235 335, 175 400 C115 465, 165 530, 65 575"
+          d="M680 -15
+             C600 5, 550 70, 525 145
+             C495 235, 520 300, 440 345
+             C360 390, 235 335, 175 400
+             C115 465, 165 530, 65 575"
         />
+
 
         <path
           class="flow-fourth"
-          d="M680 160 C615 165, 565 205, 550 270 C535 330, 500 380, 420 420 C345 458, 250 430, 200 485 C155 535, 165 570, 100 600"
+          d="M680 160
+             C615 165, 565 205, 550 270
+             C535 330, 500 380, 420 420
+             C345 458, 250 430, 200 485
+             C155 535, 165 570, 100 600"
         />
 
       </svg>
@@ -754,19 +1060,22 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =======================================================
        INTRO
-  ========================= -->
+       ======================================================= -->
 
   <section class="intro">
 
     <div class="intro-grid">
 
       <div>
+
         <div class="section-label">
           Γιατί Agni Expert
         </div>
+
       </div>
+
 
       <div>
 
@@ -776,17 +1085,19 @@
           Χρειάζεσαι το σωστό.
         </h2>
 
-        <p class="intro-text">
-          Πολλές επιχειρήσεις κάνουν marketing χωρίς να έχουν ξεκαθαρίσει
-          πρώτα τι θέλουν να πετύχουν. Ένα post εδώ, μια διαφήμιση εκεί,
-          λίγο SEO, λίγο social — και στο τέλος κανείς δεν ξέρει πραγματικά
-          τι λειτούργησε.
-        </p>
 
         <p class="intro-text">
-          Εμείς ξεκινάμε από την άλλη πλευρά. Πρώτα καταλαβαίνουμε την
-          επιχείρηση, την αγορά, το κοινό και τον στόχο. Μετά αποφασίζουμε
-          τι χρειάζεται να γίνει και, κυρίως, γιατί.
+          Πολλές επιχειρήσεις κάνουν marketing χωρίς να έχουν
+          ξεκαθαρίσει πρώτα τι θέλουν να πετύχουν. Ένα post εδώ,
+          μια διαφήμιση εκεί, λίγο SEO, λίγο social — και στο τέλος
+          κανείς δεν ξέρει πραγματικά τι λειτούργησε.
+        </p>
+
+
+        <p class="intro-text">
+          Εμείς ξεκινάμε από την άλλη πλευρά. Πρώτα καταλαβαίνουμε
+          την επιχείρηση, την αγορά, το κοινό και τον στόχο. Μετά
+          αποφασίζουμε τι χρειάζεται να γίνει και, κυρίως, γιατί.
         </p>
 
       </div>
@@ -796,9 +1107,9 @@
   </section>
 
 
-  <!-- =========================
-       PHILOSOPHY / PROCESS
-  ========================= -->
+  <!-- =======================================================
+       PHILOSOPHY
+       ======================================================= -->
 
   <section class="philosophy">
 
@@ -809,14 +1120,15 @@
       </div>
 
       <h2>
-        Από τη σκέψη
-        <span>στην πράξη.</span>
+        Δεν ξεκινάμε από το
+        <span>τι θα κάνουμε.</span>
       </h2>
 
     </div>
 
 
     <div class="steps">
+
 
       <div class="step">
 
@@ -825,13 +1137,14 @@
         </div>
 
         <h3>
-          Αναλύουμε.
+          Καταλαβαίνουμε.
         </h3>
 
         <p>
-          Βλέπουμε την επιχείρηση συνολικά. Την αγορά, τον ανταγωνισμό,
-          το κοινό, την υπάρχουσα εικόνα και όσα έχουν ήδη γίνει.
-          Γιατί χωρίς σωστή εικόνα, δεν υπάρχει σωστή στρατηγική.
+          Βλέπουμε την επιχείρηση συνολικά: την αγορά, το κοινό,
+          τον ανταγωνισμό, την υπάρχουσα εικόνα και όσα έχουν
+          ήδη γίνει. Γιατί πριν αποφασίσουμε τι χρειάζεται,
+          πρέπει πρώτα να καταλάβουμε πού βρισκόμαστε.
         </p>
 
       </div>
@@ -848,9 +1161,10 @@
         </h3>
 
         <p>
-          Μετατρέπουμε τα δεδομένα σε κατεύθυνση. Καθορίζουμε στόχους,
-          προτεραιότητες, κανάλια και ενέργειες που έχουν λόγο ύπαρξης
-          και μπορούν να εφαρμοστούν στην πράξη.
+          Μετατρέπουμε την εικόνα σε κατεύθυνση. Καθορίζουμε
+          στόχους, προτεραιότητες, κανάλια και ενέργειες που
+          έχουν λόγο ύπαρξης και μπορούν να εφαρμοστούν
+          στην πράξη.
         </p>
 
       </div>
@@ -882,29 +1196,31 @@
         </div>
 
         <h3>
-          Μετράμε.
+          Εξελίσσουμε.
         </h3>
 
         <p>
-          Παρακολουθούμε τι συμβαίνει, αξιολογούμε τα αποτελέσματα και
-          προσαρμόζουμε ό,τι χρειάζεται. Γιατί το marketing δεν είναι
-          κάτι που σχεδιάζεται μία φορά και τελειώνει εκεί.
+          Παρακολουθούμε τι συμβαίνει, αξιολογούμε τα αποτελέσματα
+          και προσαρμόζουμε ό,τι χρειάζεται. Γιατί το marketing
+          δεν είναι κάτι που σχεδιάζεται μία φορά και τελειώνει εκεί.
         </p>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- =========================
+  <!-- =======================================================
        STRATEGY + EXECUTION
-  ========================= -->
+       ======================================================= -->
 
   <section class="execution">
 
     <div class="execution-grid">
+
 
       <div class="execution-copy">
 
@@ -912,21 +1228,26 @@
           Strategy + Execution
         </div>
 
+
         <h2>
-          Δεν μένουμε
-          στη <span>θεωρία.</span>
+          Στρατηγική που
+          γίνεται <span>πράξη.</span>
         </h2>
 
-        <p>
-          Η συμβουλευτική είναι μόνο η αρχή. Θέλουμε να ξέρουμε όχι μόνο
-          τι πρέπει να γίνει, αλλά και να μπορούμε να το κάνουμε μαζί σου.
-        </p>
 
         <p>
-          Γι' αυτό το Agni Expert βρίσκεται κάπου ανάμεσα στη στρατηγική
-          συμβουλευτική και την agency πλευρά. Σκεφτόμαστε μαζί σου,
-          σχεδιάζουμε μαζί σου και — όταν χρειάζεται — αναλαμβάνουμε
-          να το υλοποιήσουμε.
+          Η συμβουλευτική είναι μόνο η αρχή. Δεν θέλουμε να
+          σου παραδώσουμε ένα πλάνο και να σε αφήσουμε να
+          βρεις μόνος σου πώς θα το εφαρμόσεις.
+        </p>
+
+
+        <p>
+          Στο Agni Expert λειτουργούμε ως
+          <strong>Strategic Marketing Partner</strong>:
+          κατανοούμε μαζί την ανάγκη, σχεδιάζουμε τη σωστή
+          προσέγγιση και, όταν χρειάζεται, αναλαμβάνουμε
+          και την υλοποίησή της.
         </p>
 
       </div>
@@ -938,17 +1259,20 @@
           Σκέψη που γίνεται πράξη.
         </h3>
 
+
         <p>
-          Δεν παραδίδουμε απλώς ένα πλάνο και αποχωρούμε.
-          Είμαστε δίπλα στην επιχείρηση όσο η στρατηγική μετατρέπεται
-          σε πραγματικές ενέργειες.
+          Από τη στρατηγική και το πλάνο μέχρι τις πραγματικές
+          marketing ενέργειες, είμαστε δίπλα στην επιχείρηση
+          σε όλη τη διαδρομή.
         </p>
+
 
         <br>
 
+
         <p>
-          Γιατί μια καλή ιδέα έχει αξία μόνο όταν μπορεί να εφαρμοστεί
-          σωστά — και να φέρει αποτέλεσμα.
+          Γιατί μια καλή ιδέα έχει αξία όταν μπορεί να εφαρμοστεί
+          σωστά, να μετρηθεί και να εξελιχθεί.
         </p>
 
       </div>
@@ -958,9 +1282,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =======================================================
        VALUES
-  ========================= -->
+       ======================================================= -->
 
   <section class="values">
 
@@ -969,6 +1293,7 @@
       <div class="section-label">
         Τι μας χαρακτηρίζει
       </div>
+
 
       <h2>
         Τέσσερα πράγματα
@@ -979,6 +1304,7 @@
 
 
     <div class="values-grid">
+
 
       <div class="value">
 
@@ -991,8 +1317,9 @@
         </h3>
 
         <p>
-          Δεν ξεκινάμε από το εργαλείο ή το κανάλι. Ξεκινάμε από
-          τον στόχο και βρίσκουμε τον σωστό τρόπο να φτάσουμε εκεί.
+          Δεν ξεκινάμε από το εργαλείο ή το κανάλι.
+          Ξεκινάμε από τον στόχο και βρίσκουμε τον
+          σωστό τρόπο να φτάσουμε εκεί.
         </p>
 
       </div>
@@ -1010,8 +1337,8 @@
 
         <p>
           Χωρίς περιττή ορολογία και περίπλοκες διαδικασίες.
-          Θέλουμε να ξέρεις τι κάνουμε, γιατί το κάνουμε και τι περιμένουμε
-          να πετύχουμε.
+          Θέλουμε να ξέρεις τι κάνουμε, γιατί το κάνουμε
+          και τι περιμένουμε να πετύχουμε.
         </p>
 
       </div>
@@ -1029,7 +1356,8 @@
 
         <p>
           Η στρατηγική έχει αξία όταν περνάει στην πράξη.
-          Γι' αυτό συνδυάζουμε σχεδιασμό με πραγματική υλοποίηση.
+          Γι' αυτό συνδυάζουμε σχεδιασμό με πραγματική
+          υλοποίηση.
         </p>
 
       </div>
@@ -1046,21 +1374,22 @@
         </h3>
 
         <p>
-          Δεν θέλουμε να είμαστε απλώς ένας εξωτερικός συνεργάτης.
-          Θέλουμε να καταλαβαίνουμε την επιχείρησή σου και να λειτουργούμε
-          σαν πραγματικό marketing partner.
+          Θέλουμε να καταλαβαίνουμε την επιχείρησή σου,
+          να δουλεύουμε μαζί της και να λειτουργούμε
+          ως πραγματικός marketing partner.
         </p>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- =========================
+  <!-- =======================================================
        CTA
-  ========================= -->
+       ======================================================= -->
 
   <section class="about-cta">
 
@@ -1069,21 +1398,26 @@
       <span>Ας βρούμε τον τρόπο.</span>
     </h2>
 
+
     <p>
-      Πες μας τι θέλεις να πετύχεις και ας δούμε μαζί τι χρειάζεται
-      για να το κάνουμε πραγματικότητα.
+      Πες μας τι θέλεις να πετύχεις και ας δούμε μαζί
+      τι χρειάζεται για να το κάνουμε πραγματικότητα.
     </p>
 
-    <a href="contact.html" class="cta-button">
+
+    <a
+      href="contact.html"
+      class="cta-button"
+    >
       Μίλησέ μας
     </a>
 
   </section>
 
 
-  <!-- =========================
+  <!-- =======================================================
        FOOTER
-  ========================= -->
+       ======================================================= -->
 
   <footer>
 
@@ -1096,6 +1430,7 @@
     </div>
 
   </footer>
+
 
 </body>
 </html>
