@@ -446,6 +446,47 @@
     }
 
     /* =========================
+       BACK TO TOP
+    ========================= */
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(197,181,255,0.35);
+      border-radius: 50%;
+      background: rgba(17,17,20,0.88);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
        FOOTER
     ========================= */
 
@@ -593,6 +634,13 @@
 
       .closing {
         padding: 90px 6%;
+      }
+
+      .back-to-top {
+        right: 18px;
+        bottom: 18px;
+        width: 44px;
+        height: 44px;
       }
 
       footer {
@@ -987,6 +1035,20 @@
   </section>
 
 
+  <!-- =========================
+       BACK TO TOP
+  ========================= -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Επιστροφή στην κορυφή"
+  >
+    ↑
+  </button>
+
+
   <footer>
 
     <div class="footer-inner">
@@ -1064,6 +1126,33 @@
         );
 
       }
+
+    });
+
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function() {
+
+      if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+      } else {
+
+        backToTop.classList.remove("show");
+
+      }
+
+    });
+
+
+    backToTop.addEventListener("click", function() {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
     });
   </script>
